@@ -134,3 +134,57 @@ video {
   border: 5px solid #ccc; /* Bordure autour de la vidéo */
   border-radius: 10px; /* Coins arrondis */
 }
+/* style.css */
+
+.about-intro, .our-values, .history, .team {
+  padding: 40px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.about-intro h1, .our-values h2, .history h2, .team h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.value {
+  margin-bottom: 20px;
+}
+
+.value h3 {
+  font-size: 1.5em;
+  color: #444;
+}
+
+.value p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 1em;
+  color: #777;
+}
