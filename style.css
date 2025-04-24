@@ -117,3 +117,20 @@ footer {
     font-size: 1rem;
   }
 }
+/* style.css */
+
+.video-presentation {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.video-presentation h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+video {
+  max-width: 100%; /* Assure que la vidéo s'ajuste bien à l'écran */
+  border: 5px solid #ccc; /* Bordure autour de la vidéo */
+  border-radius: 10px; /* Coins arrondis */
+}
