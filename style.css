@@ -1,152 +1,32 @@
-/* Style de base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Times New Roman", Times, serif;
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
-
-/* Mise en page du header */
 header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #ffd700;
+  padding: 20px;
+  text-align: center;
 }
-
-header .logo img {
-    max-width: 200px;
+header h1 {
+  color: #000;
 }
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
-
-header nav ul li {
-    margin: 0 15px;
+nav ul li {
+  display: inline;
+  margin: 0 10px;
 }
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+nav ul li a {
+  text-decoration: none;
+  color: black;
 }
-
-/* Bannière principale */
-.hero {
-    background-image: url('banner.jpg');
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
+main {
+  padding: 20px;
 }
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero .cta-button {
-    padding: 10px 20px;
-    background-color: gold;
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-/* Section introduction */
-.intro {
-    padding: 40px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-/* Section services */
-.services {
-    padding: 40px;
-    text-align: center;
-}
-
-.services .service-item {
-    margin-bottom: 30px;
-}
-
-.services .service-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* Section réalisations */
-.realisations {
-    padding: 40px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.realisations .portfolio {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.realisations .project {
-    margin: 20px;
-    width: 300px;
-}
-
-.realisations .project img {
-    width: 100%;
-    height: auto;
-}
-
-/* Section Contact */
-.contact {
-    padding: 40px;
-    background-color: #f4f4f4;
-}
-
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact form input,
-.contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-}
-
-.contact form button {
-    padding: 10px 20px;
-    background-color: gold;
-    border: none;
-    color: #000;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-/* WhatsApp Widget */
-.whatsapp a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #25D366;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-/* Footer */
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+section h2 {
+  color: #000;
 }
