@@ -8,7 +8,7 @@ Site vitrine pour la société **GOLD S CONSTRUCTION ET RÉNOVATION**, basée à
 ```
 golds-site/
 │
-├── index2018.html            # Page d'accueil
+├── index.html            # Page d'accueil
 ├── apropos.html          # Page À propos
 ├── services.html         # Page des services
 ├── realisations.html     # Page des réalisations
@@ -20,7 +20,7 @@ golds-site/
 ## 🚀 Lancer le site en local
 
 1. Clone ou télécharge ce dépôt sur ton ordinateur.
-2. Ouvre `index2018.html` dans ton navigateur (double-clique ou clic droit > Ouvrir avec).
+2. Ouvre `index.html` dans ton navigateur (double-clique ou clic droit > Ouvrir avec).
 3. Navigue entre les pages via le menu de navigation.
 
 > 💡 Tu peux aussi utiliser un serveur local comme XAMPP, MAMP ou Live Server pour simuler un hébergement web.
@@ -31,7 +31,7 @@ Chaque page est liée grâce à des liens **relatifs** dans la barre de navigati
 
 ```html
 <nav>
-  <a href="index2018.html">ACCUEIL</a>
+  <a href="index.html">ACCUEIL</a>
   <a href="apropos.html">À PROPOS</a>
   <a href="services.html">SERVICES</a>
   <a href="realisations.html">RÉALISATIONS</a>
@@ -44,8 +44,8 @@ Chaque page est liée grâce à des liens **relatifs** dans la barre de navigati
 - **Adresse :** Immeuble SOCOGARE, Rue Ferdinand Forest, 97122 Baie-Mahault, Guadeloupe
 - **Téléphone :** 0590 57 07 11
 - **Email :** goldsconstruction1991@gmail.com
-- **Facebook :** [GOLD S Construction](https://www.facebook.com/...) ← *à compléter*
-- **WhatsApp :** [Cliquez ici pour discuter](https://wa.me/...) ← *à compléter*
+- **Facebook :** [GOLD S Construction](https://www.facebook.com/goldsconstructionetrenovation) ← *à compléter*
+- **WhatsApp :** [Cliquez ici pour discuter](https://wa.me/590690429400) ← *à compléter*
 - **Horaires :** Lundi à Vendredi : 7h00 – 14h00
 
 ## 📬 Formulaire de contact
