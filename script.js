@@ -1,0 +1,1 @@
+console.log("GOLD S CONSTRUCTION ET RENOVATION - JS actif");
