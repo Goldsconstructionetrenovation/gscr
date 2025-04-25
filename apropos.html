@@ -20,7 +20,7 @@
       background-color: #808080; /* Gris pour l'entête */
       color: gold;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start; /* Alignement du contenu à gauche */
       align-items: center;
       padding: 1em;
       flex-wrap: wrap;
@@ -28,6 +28,13 @@
 
     .logo {
       height: 50px;
+    }
+
+    .company-name {
+      color: white;
+      font-size: 1.5em; /* Taille de police égale à celle sur la page d'accueil */
+      font-weight: bold;
+      margin-left: 15px; /* Espacement entre le logo et le nom */
     }
 
     .nav ul {
@@ -51,12 +58,6 @@
 
     .nav a:focus {
       outline: 2px solid gold;
-    }
-
-    .nav .company-name {
-      color: white;
-      font-size: 1.5em;
-      font-weight: bold;
     }
 
     .presentation {
