@@ -3,33 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe. Formulaire, téléphone, WhatsApp, email.">
   <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Contactez-nous</h1>
+  <header class="header">
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo.png" alt="Logo GOLD S" class="logo"></a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <section>
-      <h2>Formulaire de contact</h2>
-      <form action="submit_form.php" method="POST">
+
+  <main class="contact-page">
+    <section class="contact-form-section">
+      <h1>Contactez-nous</h1>
+      <form action="submit_form.php" method="POST" class="contact-form">
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required>
+
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" required>
+
         <label for="message">Message :</label>
         <textarea id="message" name="message" required></textarea>
+
         <button type="submit">Envoyer</button>
       </form>
     </section>
-    <section>
-      <h3>Nos coordonnées :</h3>
-      <p>Téléphone : +590590570711</p>
-      <p>Email : goldsconstruction1991@gmail.com</p>
-      <p>Adresse : Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
-      <p><a href="https://wa.me/+590690429400">Contactez-nous via WhatsApp</a></p>
+
+    <section class="contact-info">
+      <h2>Nos coordonnées</h2>
+      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">+590 590 57 07 11</a></p>
+      <p><strong>Email :</strong> <a href="mailto:goldsconstruction1991@gmail.com">goldsconstruction1991@gmail.com</a></p>
+      <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
+      <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Cliquez ici pour discuter</a></p>
+    </section>
+
+    <section class="map-section">
+      <h2>Localisation</h2>
+      <iframe
+        src="https://www.google.com/maps?q=Immeuble+SOCOGARE,+rue+Ferdinand+FORESTE,+97122+BAIE-MAHAULT&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
     </section>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+  </footer>
+
+  <!-- Boutons de contact flottants -->
+  <div class="contact-floating">
+    <a href="tel:+590590570711" class="btn-float phone" title="Appeler">
+      📞
+    </a>
+    <a href="mailto:goldsconstruction1991@gmail.com" class="btn-float mail" title="Envoyer un mail">
+      ✉️
+    </a>
+    <a href="https://wa.me/590690429400" class="btn-float whatsapp" title="WhatsApp" target="_blank">
+      💬
+    </a>
+  </div>
 </body>
 </html>
