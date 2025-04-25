@@ -101,17 +101,18 @@
     .hero-slider {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%); /* Centre l'image horizontalement */
       width: 100%;
       height: 100%;
       z-index: 1;
     }
 
     .hero-slider img {
-      width: 100%; /* L'image prendra toute la largeur de la page */
-      height: 100%; /* L'image prendra également toute la hauteur de la section */
+      width: 100%; /* L'image prend toute la largeur de la page */
+      height: 100%; /* L'image prend également toute la hauteur de la section */
       object-fit: cover; /* Assure que l'image couvre la section sans déformation */
-      object-position: center center; /* Centrage de l'image */
+      object-position: center center; /* Centre l'image */
       position: absolute;
       opacity: 0;
       transition: opacity 1s ease-in-out;
