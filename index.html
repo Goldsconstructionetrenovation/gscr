@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <style>
-    /* Global styles */
     body {
       font-family: "Times New Roman", Georgia, serif;
       margin: 0;
@@ -20,7 +19,6 @@
       line-height: 1.6;
     }
 
-    /* Header */
     .header {
       background-color: #000;
       color: gold;
@@ -70,7 +68,6 @@
       outline: 2px solid gold;
     }
 
-    /* Contact links */
     .contact-links {
       text-align: center;
       margin: 10px 0;
@@ -87,11 +84,10 @@
       color: #ffcc00;
     }
 
-    /* Hero section with static background image */
     .hero {
       position: relative;
       height: 500px;
-      background-image: url("slide1.jpg"); /* Remplace par ton image */
+      background-image: url("slide4.jpg");
       background-size: cover;
       background-position: center;
       display: flex;
@@ -123,20 +119,45 @@
 
     .cta-button {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 25px;
       background-color: gold;
       color: black;
       text-decoration: none;
       font-weight: bold;
       margin-top: 20px;
       border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      transition: transform 0.5s ease;
+      z-index: 0;
+    }
+
+    .cta-button:hover::after {
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .cta-button:hover {
-      background-color: #ffcc00;
+      transform: scale(1.05);
     }
 
-    /* Presentation */
+    .cta-button span {
+      position: relative;
+      z-index: 1;
+    }
+
     .presentation {
       padding: 40px 20px;
       text-align: center;
@@ -151,7 +172,6 @@
       margin-bottom: 20px;
     }
 
-    /* Footer */
     .footer {
       background-color: #000;
       color: white;
@@ -169,7 +189,6 @@
       text-decoration: underline;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .header {
         flex-direction: column;
@@ -222,7 +241,7 @@
     <div class="hero-content">
       <h1>Votre projet, notre savoir-faire</h1>
       <p>Depuis plus de 7 ans, votre partenaire de confiance en Guadeloupe pour tous vos projets de construction et rénovation.</p>
-      <a href="contact.html" class="cta-button">Demandez un devis gratuit</a>
+      <a href="contact.html" class="cta-button"><span>Demandez un devis gratuit</span></a>
     </div>
   </section>
 
