@@ -1,62 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez les services proposés par GOLD S CONSTRUCTION ET RENOVATION : construction, rénovation, aménagement, et plus encore.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez les services proposés par GOLD S CONSTRUCTION ET RENOVATION : construction, rénovation, aménagement, VRD et plus encore." />
   <title>Nos Services - GOLD S CONSTRUCTION ET RENOVATION</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Times New Roman", Georgia, serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
-      color: #333;
+      color: #000;
+      line-height: 1.6;
     }
 
+    /* Header */
     .header {
-      background-color: #000;
+      background-color: #808080;
       color: gold;
-      padding: 1em 0;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .logo {
-      max-width: 150px;
-      display: block;
-      margin: 0 auto;
+      height: 50px;
     }
 
-    .nav {
-      text-align: center;
-      margin-top: 10px;
+    .company-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: gold;
     }
 
     .nav ul {
       list-style: none;
       padding: 0;
-    }
-
-    .nav li {
-      display: inline;
-      margin: 0 20px;
+      display: flex;
+      gap: 15px;
+      margin: 0;
     }
 
     .nav a {
-      color: gold;
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
 
     .nav a:hover {
-      color: #fff;
+      text-decoration: underline;
+      color: #ffcc00;
     }
 
-    .services {
+    .nav a:focus {
+      outline: 2px solid gold;
+    }
+
+    .contact-links {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .contact-links a {
+      margin: 0 10px;
+      color: gold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contact-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* Main */
+    main {
+      padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
-      padding: 40px 20px;
     }
 
     .intro {
@@ -66,6 +99,8 @@
 
     .intro h1 {
       font-size: 2.5em;
+      border-bottom: 2px solid gold;
+      display: inline-block;
       margin-bottom: 10px;
     }
 
@@ -80,6 +115,20 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .service img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .service-content {
+      flex: 1;
     }
 
     .service h2 {
@@ -89,12 +138,13 @@
     }
 
     .service p {
-      font-size: 1.2em;
-      color: #666;
+      font-size: 1.1em;
+      color: #333;
     }
 
+    /* Footer */
     .footer {
-      background-color: #000;
+      background-color: #808080;
       color: white;
       text-align: center;
       padding: 20px;
@@ -109,11 +159,37 @@
     .footer a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1em;
+      }
+
+      .service {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .service img {
+        margin-bottom: 15px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="header">
-    <img src="Logo.png" alt="Logo GOLD S" class="logo">
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
     <nav class="nav">
       <ul>
         <li><a href="index.html">Accueil</a></li>
@@ -125,40 +201,72 @@
     </nav>
   </header>
 
-  <main class="services">
+  <div class="contact-links">
+    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <main>
     <section class="intro">
       <h1>Nos Services</h1>
       <p>Chez <strong>GOLD S CONSTRUCTION ET RENOVATION</strong>, nous proposons une gamme complète de services pour donner vie à vos projets.</p>
     </section>
 
     <section class="service">
-      <h2>🔨 Construction neuve</h2>
-      <p>Bâtissons ensemble votre avenir ! Nous réalisons des maisons individuelles, bâtiments professionnels, extensions, avec des matériaux de qualité et un accompagnement de A à Z.</p>
+      <img src="images/construction.jpg" alt="Construction neuve">
+      <div class="service-content">
+        <h2>🔨 Construction neuve</h2>
+        <p>Bâtissons ensemble votre avenir ! Nous réalisons des maisons individuelles, bâtiments professionnels, extensions, avec des matériaux de qualité et un accompagnement de A à Z.</p>
+      </div>
     </section>
 
     <section class="service">
-      <h2>🏚️ Rénovation</h2>
-      <p>Redonnez vie à vos espaces : rénovation complète ou partielle, intérieure et extérieure, amélioration énergétique, modernisation d’installations.</p>
+      <img src="images/renovation.jpg" alt="Rénovation">
+      <div class="service-content">
+        <h2>🏚️ Rénovation</h2>
+        <p>Redonnez vie à vos espaces : rénovation complète ou partielle, intérieure et extérieure, amélioration énergétique, modernisation d’installations.</p>
+      </div>
     </section>
 
     <section class="service">
-      <h2>🚪 Aménagement intérieur</h2>
-      <p>Optimisez votre confort et l’esthétique de votre intérieur : création d’espaces sur mesure, pose de cloisons, menuiseries, revêtements de sol et mur.</p>
+      <img src="images/interieur.jpg" alt="Aménagement intérieur">
+      <div class="service-content">
+        <h2>🚪 Aménagement intérieur</h2>
+        <p>Optimisez votre confort et l’esthétique de votre intérieur : création d’espaces sur mesure, pose de cloisons, menuiseries, revêtements de sol et mur.</p>
+      </div>
     </section>
 
     <section class="service">
-      <h2>🌴 Aménagement extérieur</h2>
-      <p>Terrasses, clôtures, allées, piscines : nous transformons vos extérieurs en espaces fonctionnels et agréables à vivre.</p>
+      <img src="images/exterieur.jpg" alt="Aménagement extérieur">
+      <div class="service-content">
+        <h2>🌴 Aménagement extérieur</h2>
+        <p>Terrasses, clôtures, allées, piscines : nous transformons vos extérieurs en espaces fonctionnels et agréables à vivre.</p>
+      </div>
     </section>
 
     <section class="service">
-      <h2>📐 Travaux sur mesure</h2>
-      <p>Vous avez un projet particulier ? Nous étudions vos besoins avec précision pour vous proposer une solution personnalisée, clé en main.</p>
+      <img src="images/personnalise.jpg" alt="Travaux sur mesure">
+      <div class="service-content">
+        <h2>📐 Travaux sur mesure</h2>
+        <p>Vous avez un projet particulier ? Nous étudions vos besoins avec précision pour vous proposer une solution personnalisée, clé en main.</p>
+      </div>
+    </section>
+
+    <section class="service">
+      <img src="images/vrd.jpg" alt="Voirie et Réseaux Divers">
+      <div class="service-content">
+        <h2>🚧 Voirie et Réseaux Divers (VRD)</h2>
+        <p>Nous réalisons vos travaux de VRD : raccordement aux réseaux, terrassements, voiries, assainissements, gestion des eaux pluviales. Une base solide pour tous vos projets.</p>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </p>
   </footer>
 </body>
 </html>
