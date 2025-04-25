@@ -16,23 +16,25 @@
       line-height: 1.6;
     }
 
+    /* En-tête */
     .header {
-      background-color: #808080; /* Gris pour l'entête */
+      background-color: #000; /* Couleur noir pour correspondre à la page d'accueil */
       color: gold;
       display: flex;
-      justify-content: flex-start; /* Alignement du contenu à gauche */
+      justify-content: flex-start;
       align-items: center;
-      padding: 1em;
-      flex-wrap: wrap;
+      padding: 1em 2em; /* Espacement et alignement */
+      flex-wrap: nowrap;
+      position: relative;
     }
 
     .logo {
-      height: 50px;
+      height: 50px; /* Taille du logo identique */
     }
 
     .company-name {
       color: white;
-      font-size: 1.5em; /* Taille de police égale à celle sur la page d'accueil */
+      font-size: 1.5em; /* Taille du texte identique à la page d'accueil */
       font-weight: bold;
       margin-left: 15px; /* Espacement entre le logo et le nom */
     }
@@ -60,6 +62,7 @@
       outline: 2px solid gold;
     }
 
+    /* Contenu principal */
     .presentation {
       padding: 40px 20px;
       text-align: center;
@@ -85,8 +88,9 @@
       font-size: 1.1em;
     }
 
+    /* Pied de page */
     .footer {
-      background-color: #808080; /* Gris pour le bas de page */
+      background-color: #ccc; /* Couleur gris pour correspondre à la page d'accueil */
       color: white;
       text-align: center;
       padding: 20px;
