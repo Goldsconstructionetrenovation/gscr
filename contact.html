@@ -1,38 +1,206 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe. Formulaire, téléphone, WhatsApp, email.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe. Formulaire, téléphone, WhatsApp, email." />
   <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
-   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: "Times New Roman", Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #000;
+      color: gold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+
+    main.contact-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .contact-form-section,
+    .contact-info,
+    .map-section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: black;
+      color: gold;
+      border: none;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    a {
+      color: black;
+    }
+
+    a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    .footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .btn-float {
+      background-color: gold;
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-float:hover {
+      background-color: #ffcc00;
+    }
+
+    iframe {
+      border: 2px solid gold;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1em;
+      }
+
+      .contact-form {
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      main.contact-page {
+        padding: 20px 10px;
+      }
+
+      iframe {
+        height: 250px;
+      }
+    }
+  </style>
 </head>
 <body>
-   <header class="header">
-  <img src="Logo.png" alt="Logo GOLD S" class="logo">
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+
+  <header class="header">
+    <img src="Logo.png" alt="Logo GOLD S" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="contact-page">
     <section class="contact-form-section">
       <h1>Contactez-nous</h1>
       <form action="submit_form.php" method="POST" class="contact-form">
         <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required />
 
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required />
 
         <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" rows="6" required></textarea>
 
         <button type="submit">Envoyer</button>
       </form>
@@ -50,27 +218,27 @@
       <h2>Localisation</h2>
       <iframe
         src="https://www.google.com/maps?q=Immeuble+SOCOGARE,+rue+Ferdinand+FORESTE,+97122+BAIE-MAHAULT&output=embed"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        width="100%"
+        height="300"
+        loading="lazy"
+        allowfullscreen>
       </iframe>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </p>
   </footer>
 
   <!-- Boutons de contact flottants -->
   <div class="contact-floating">
-    <a href="tel:+590590570711" class="btn-float phone" title="Appeler">
-      📞
-    </a>
-    <a href="mailto:goldsconstruction1991@gmail.com" class="btn-float mail" title="Envoyer un mail">
-      ✉️
-    </a>
-    <a href="https://wa.me/590690429400" class="btn-float whatsapp" title="WhatsApp" target="_blank">
-      💬
-    </a>
+    <a href="tel:+590590570711" class="btn-float phone" title="Appeler">📞</a>
+    <a href="mailto:goldsconstruction1991@gmail.com" class="btn-float mail" title="Envoyer un mail">✉️</a>
+    <a href="https://wa.me/590690429400" class="btn-float whatsapp" title="WhatsApp" target="_blank">💬</a>
   </div>
-  <script src="js/script.js"></script>
+
 </body>
 </html>
