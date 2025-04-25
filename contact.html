@@ -48,9 +48,9 @@
       padding: 20px;
     }
 
-    .contact-form-section,
     .contact-info,
-    .map-section {
+    .map-section,
+    .contact-form-section {
       margin-bottom: 20px;
     }
 
@@ -82,6 +82,15 @@
 
     .contact-form button:hover {
       background-color: #005A8D;
+    }
+
+    /* Section des coordonnées */
+    .contact-info h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      font-size: 1.1em;
     }
 
     /* Boutons flottants de contact */
@@ -140,22 +149,7 @@
   </header>
 
   <main class="contact-page">
-    <section class="contact-form-section">
-      <h1>Contactez-nous</h1>
-      <form action="submit_form.php" method="POST" class="contact-form">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-
+    <!-- Section des coordonnées -->
     <section class="contact-info">
       <h2>Nos coordonnées</h2>
       <p><strong>Téléphone :</strong> <a href="tel:+590590570711">+590 590 57 07 11</a></p>
@@ -164,6 +158,24 @@
       <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Cliquez ici pour discuter</a></p>
     </section>
 
+    <!-- Section du formulaire de contact -->
+    <section class="contact-form-section">
+      <h1>Contactez-nous</h1>
+      <form action="mailto:goldsconstruction1991@gmail.com" method="POST" class="contact-form" enctype="multipart/form-data">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <!-- Section de la carte -->
     <section class="map-section">
       <h2>Localisation</h2>
       <iframe
