@@ -1,26 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez qui nous sommes chez GOLD S CONSTRUCTION ET RENOVATION, spécialiste de la construction et rénovation en Guadeloupe.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez qui nous sommes chez GOLD S CONSTRUCTION ET RENOVATION, spécialiste de la construction et rénovation en Guadeloupe." />
   <title>À propos - GOLD S CONSTRUCTION ET RENOVATION</title>
- <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: "Times New Roman", Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #000;
+      color: gold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+
+    .nav a:focus {
+      outline: 2px solid gold;
+    }
+
+    .presentation {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .presentation h1,
+    .presentation h2 {
+      color: #000;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .presentation ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .presentation li {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1em;
+      }
+
+      .presentation {
+        padding: 20px 10px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header class="header">
-  <img src="Logo.png" alt="Logo GOLD S" class="logo">
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
+    <img src="images/Logo.png" alt="Logo GOLD S" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="presentation">
     <section class="intro">
@@ -47,8 +153,10 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </p>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 </html>
