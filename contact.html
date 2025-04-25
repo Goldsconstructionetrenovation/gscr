@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Laissez vos avis sur GOLD S Construction et Rénovation en Guadeloupe." />
-  <meta name="keywords" content="avis, construction, rénovation, Guadeloupe, GOLD S Construction" />
+  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe." />
+  <meta name="keywords" content="contact, construction, rénovation, Guadeloupe, GOLD S Construction" />
   <meta name="author" content="GOLD S Construction et Rénovation" />
-  <title>Avis - GOLD S CONSTRUCTION ET RENOVATION</title>
+  <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
@@ -70,7 +70,13 @@
       margin: auto;
     }
 
-    .avis-form-section form {
+    .contact-form-section,
+    .contact-info,
+    .avis-form-section {
+      margin-bottom: 30px;
+    }
+
+    .contact-form, .avis-form-section form {
       display: flex;
       flex-direction: column;
     }
@@ -97,7 +103,7 @@
 
     iframe {
       width: 100%;
-      height: 200px;
+      height: 300px;
       border: none;
     }
 
@@ -117,15 +123,34 @@
       text-decoration: underline;
     }
 
-    .avis-display {
-      margin-top: 40px;
+    /* Style for WhatsApp, Mail and Phone widgets */
+    .contact-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .avis-item {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
+    .widget-icon {
+      background-color: #25d366;
+      border-radius: 50%;
+      padding: 10px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     }
+
+    .widget-icon.phone {
+      background-color: #4CAF50;
+    }
+
+    .widget-icon.mail {
+      background-color: #f44336;
+    }
+
   </style>
 </head>
 <body>
@@ -146,17 +171,47 @@
   </header>
 
   <main class="contact-page">
+    <!-- Section coordonnées -->
+    <section class="contact-info">
+      <h2>Nos coordonnées</h2>
+      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">+590 590 57 07 11</a></p>
+      <p><strong>Email :</strong> <a href="mailto:goldsconstruction1991@gmail.com">goldsconstruction1991@gmail.com</a></p>
+      <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
+      <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Cliquez ici pour discuter</a></p>
+    </section>
+
+    <!-- Formulaire de contact -->
+    <section class="contact-form-section">
+      <h1>Contactez-nous</h1>
+      <form action="https://formsubmit.co/goldsconstruction1991@gmail.com" method="POST" class="contact-form">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://tonsite.com/merci.html">
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <!-- Section Avis -->
     <section class="avis-form-section">
       <h2>Laisser un avis</h2>
-      <form id="avisForm">
+      <form action="https://formsubmit.co/goldsconstruction1991@gmail.com" method="POST">
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="name" required>
+        <input type="text" id="nom" name="nom" required>
 
         <label for="avis">Votre avis :</label>
-        <textarea id="avis" name="comment" rows="5" placeholder="Laissez un commentaire (facultatif)"></textarea>
+        <textarea id="avis" name="message" rows="5" placeholder="Laissez un commentaire (facultatif)"></textarea>
 
         <label for="note">Note :</label>
-        <select id="note" name="rating" required>
+        <select id="note" name="note" required>
           <option value="5">⭐⭐⭐⭐⭐</option>
           <option value="4">⭐⭐⭐⭐</option>
           <option value="3">⭐⭐⭐</option>
@@ -164,18 +219,14 @@
           <option value="1">⭐</option>
         </select>
 
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://tonsite.com/merci.html">
+
         <button type="submit">Envoyer l'avis</button>
       </form>
-
-      <div id="avisResult"></div>
     </section>
 
-    <section class="avis-display">
-      <h2>Avis des clients</h2>
-      <div id="averageRating"></div>
-      <div id="avisList"></div>
-    </section>
-
+    <!-- Carte Google Maps -->
     <section class="map-section">
       <h2>Localisation</h2>
       <iframe src="https://www.google.com/maps?q=Immeuble+SOCOGARE,+rue+Ferdinand+FORESTE,+97122+BAIE-MAHAULT&output=embed"></iframe>
@@ -189,50 +240,17 @@
     </p>
   </footer>
 
-  <script>
-    // Fonction pour soumettre les avis au Google Apps Script
-    document.getElementById('avisForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const formData = new FormData(this);
-      const url = 'https://script.google.com/macros/s/TON_URL_SCRIPT/exec'; // Remplace par l'URL du script Google Apps
-
-      fetch(url, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('avisResult').innerHTML = "Merci pour votre avis !";
-        this.reset();
-      })
-      .catch(error => {
-        document.getElementById('avisResult').innerHTML = "Une erreur est survenue, veuillez réessayer.";
-      });
-    });
-
-    // Récupérer les avis depuis Google Sheets et afficher la moyenne et les avis
-    fetch('https://docs.google.com/spreadsheets/d/1cnI4FpvrR55Zt57FZ5W0PYZt84kX1oaiIcc5j-m5Jhs/edit?usp=sharing')
-      .then(response => response.json())
-      .then(data => {
-        let avisList = '';
-        let totalRating = 0;
-        let numberOfRatings = 0;
-
-        data.forEach(avis => {
-          avisList += `<div class="avis-item">
-                         <p><strong>${avis[0]}</strong> (Note : ${avis[2]})</p>
-                         <p>${avis[1]}</p>
-                         <p><i>Le ${avis[3]}</i></p>
-                       </div>`;
-          totalRating += parseInt(avis[2]);
-          numberOfRatings++;
-        });
-
-        const averageRating = totalRating / numberOfRatings;
-        document.getElementById('averageRating').innerHTML = `Moyenne des avis : ${averageRating.toFixed(1)} ⭐`;
-        document.getElementById('avisList').innerHTML = avisList;
-      });
-  </script>
+  <!-- Contact Widgets (WhatsApp, Phone, Mail) -->
+  <div class="contact-widget">
+    <a href="https://wa.me/590690429400" target="_blank" class="widget-icon">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+590590570711" class="widget-icon phone">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="mailto:goldsconstruction1991@gmail.com" class="widget-icon mail">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
 </body>
 </html>
