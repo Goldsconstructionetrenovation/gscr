@@ -87,56 +87,38 @@
       color: #ffcc00;
     }
 
-    /* Hero section with slideshow */
+    /* Hero section with static background image */
     .hero {
-  position: relative;
-  height: 500px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-slider,
-.hero-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-
-    .hero-slider {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    .hero-slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .hero-slider img.active {
-      opacity: 1;
+      position: relative;
+      height: 500px;
+      background-image: url("slide1.jpg"); /* Remplace par ton image */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px 30px;
       border-radius: 10px;
+      max-width: 90%;
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-content p {
+      font-size: 1.3em;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     .cta-button {
@@ -178,6 +160,15 @@
       margin-top: 40px;
     }
 
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .header {
@@ -192,8 +183,8 @@
       }
 
       .hero {
-        padding: 60px 10px;
         height: auto;
+        padding: 60px 10px;
       }
 
       .cta-button {
@@ -222,28 +213,15 @@
   </header>
 
   <div class="contact-links">
-    <a href="tel:+590590570711" title="Appeler">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
 
   <section class="hero">
-    <div class="hero-slider">
-      <img src="slide1.jpg" class="active" alt="Slide 1" />
-      <img src="slide2.jpg" alt="Slide 2" />
-      <img src="slide3.jpg" alt="Slide 3" />
-      <img src="slide4.jpg" alt="Slide 4" />
-      <img src="slide5.jpg" alt="Slide 5" />
-    </div>
     <div class="hero-content">
       <h1>Votre projet, notre savoir-faire</h1>
-      <p>Depuis 2018, votre partenaire de confiance en Guadeloupe pour tous vos projets de construction et rénovation.</p>
+      <p>Depuis plus de 7 ans, votre partenaire de confiance en Guadeloupe pour tous vos projets de construction et rénovation.</p>
       <a href="contact.html" class="cta-button">Demandez un devis gratuit</a>
     </div>
   </section>
@@ -252,7 +230,7 @@
     <section class="intro">
       <h2>Qui sommes-nous ?</h2>
       <p>
-        Depuis plus de 5 ans, GOLD S CONSTRUCTION ET RENOVATION accompagne ses clients en Guadeloupe dans leurs projets de construction, de rénovation et d’aménagement.
+        Depuis plus de 7 ans, GOLD S CONSTRUCTION ET RENOVATION accompagne ses clients en Guadeloupe dans leurs projets de construction, de rénovation et d’aménagement.
         Notre équipe met un point d’honneur à garantir des prestations de qualité, une communication transparente et un suivi rigoureux,
         afin d’assurer la pleine satisfaction de nos clients.
       </p>
@@ -261,20 +239,9 @@
 
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-      <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
-      <a href="politique-confidentialite.html" style="color: gold;">Politique de confidentialité</a>
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
-
-  <script>
-    const slides = document.querySelectorAll('.hero-slider img');
-    let index = 0;
-
-    setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 4000);
-  </script>
 </body>
 </html>
