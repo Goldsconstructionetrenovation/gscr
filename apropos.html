@@ -6,7 +6,11 @@
   <meta name="description" content="Découvrez qui nous sommes chez GOLD S CONSTRUCTION ET RENOVATION, spécialiste de la construction et rénovation en Guadeloupe." />
   <title>À propos - GOLD S CONSTRUCTION ET RENOVATION</title>
 
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <style>
+    /* Global styles */
     body {
       font-family: "Times New Roman", Georgia, serif;
       margin: 0;
@@ -16,26 +20,31 @@
       line-height: 1.6;
     }
 
-    /* En-tête */
+    /* Header */
     .header {
-      background-color: #ccc; /* Fond gris comme sur la page d'accueil */
-      color: black;
+      background-color: #808080; /* Fond gris */
+      color: gold;
       display: flex;
-      justify-content: space-between; /* Aligner le logo et le menu à droite */
+      justify-content: space-between;
       align-items: center;
-      padding: 1em 2em; /* Espacement et alignement */
-      flex-wrap: nowrap;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .logo {
-      height: 50px; /* Taille du logo identique */
+      height: 50px;
     }
 
     .company-name {
-      color: black; /* Couleur noire pour le nom de la société */
-      font-size: 1.5em; /* Taille identique à celle de la page d'accueil */
+      font-size: 1.2em;
       font-weight: bold;
-      margin-right: 15px; /* Espacement entre le logo et le nom */
+      color: gold;
     }
 
     .nav ul {
@@ -47,7 +56,7 @@
     }
 
     .nav a {
-      color: black; /* Couleur des liens de navigation */
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
@@ -61,7 +70,24 @@
       outline: 2px solid gold;
     }
 
-    /* Contenu principal */
+    /* Contact links */
+    .contact-links {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .contact-links a {
+      margin: 0 10px;
+      color: gold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contact-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* Presentation */
     .presentation {
       padding: 40px 20px;
       text-align: center;
@@ -69,7 +95,6 @@
       margin: auto;
     }
 
-    .presentation h1,
     .presentation h2 {
       color: #000;
       border-bottom: 2px solid gold;
@@ -77,19 +102,9 @@
       margin-bottom: 20px;
     }
 
-    .presentation ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .presentation li {
-      margin: 10px 0;
-      font-size: 1.1em;
-    }
-
-    /* Pied de page */
+    /* Footer */
     .footer {
-      background-color: #ccc; /* Couleur gris clair pour correspondre à la page d'accueil */
+      background-color: #808080; /* Fond gris */
       color: white;
       text-align: center;
       padding: 20px;
@@ -105,6 +120,7 @@
       text-decoration: underline;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .header {
         flex-direction: column;
@@ -125,9 +141,12 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header class="header">
-    <img src="Logo.png" alt="Logo GOLD S" class="logo" />
-    <div class="company-name">GOLD S CONSTRUCTION ET RENOVATION</div>
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
     <nav class="nav">
       <ul>
         <li><a href="index.html">Accueil</a></li>
@@ -139,34 +158,38 @@
     </nav>
   </header>
 
+  <!-- Contact Links -->
+  <div class="contact-links">
+    <a href="tel:+590590570711" title="Appeler">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Main content -->
   <main class="presentation">
     <section class="intro">
-      <h1>À propos de GOLD S CONSTRUCTION ET RENOVATION</h1>
-      <p>Depuis sa création en <strong>2018</strong>, GOLD S CONSTRUCTION ET RENOVATION se distingue par son engagement à accompagner ses clients dans la réalisation de leurs projets de <strong>construction</strong>, <strong>rénovation</strong> et <strong>aménagement</strong>, que ce soit pour des espaces intérieurs ou extérieurs, en Guadeloupe.</p>
-      <p>Nous sommes une entreprise familiale qui se distingue par sa passion du métier et son savoir-faire. Notre priorité est de transformer vos idées en projets concrets, tout en assurant une qualité de service irréprochable et un respect des normes de sécurité. À travers chaque intervention, nous veillons à allier esthétique, fonctionnalité et durabilité, pour que chaque réalisation soit à la hauteur de vos attentes.</p>
-    </section>
-
-    <section class="mission">
-      <h2>Notre mission</h2>
-      <p>Notre mission est de faire de vos projets une réalité tangible et de qualité. Qu’il s’agisse de la construction d’une maison, de la rénovation d’un espace de vie ou de l’aménagement de vos extérieurs, nous mettons tout en œuvre pour que vos objectifs soient atteints, dans les meilleures conditions possibles. Grâce à notre expérience, nous pouvons répondre à une large variété de demandes, en nous adaptant à chaque besoin spécifique, qu’il provienne d’un particulier ou d’un professionnel.</p>
-    </section>
-
-    <section class="engagements">
-      <h2>Nos engagements</h2>
-      <ul>
-        <li>✅ Accompagnement personnalisé de A à Z : Nous vous conseillons et vous guidons tout au long de votre projet, du premier contact jusqu’à la finalisation. Votre satisfaction est au cœur de notre approche.</li>
-        <li>✅ Respect des délais et du budget : Nous nous engageons à respecter les délais convenus ainsi que le budget défini, tout en vous assurant des prestations de haute qualité.</li>
-        <li>✅ Matériaux de qualité et techniques modernes : Nous utilisons des matériaux durables et des méthodes de construction innovantes pour garantir la solidité et la longévité de vos réalisations.</li>
-        <li>✅ Suivi régulier et communication transparente : Nous vous tenons informés à chaque étape du projet et restons disponibles pour toute question ou ajustement nécessaire.</li>
-      </ul>
+      <h2>Qui sommes-nous ?</h2>
+      <p>
+        Depuis plus de 7 ans, GOLD S CONSTRUCTION ET RENOVATION accompagne ses clients en Guadeloupe dans leurs projets de construction, de rénovation et d’aménagement.
+        Notre équipe met un point d’honneur à garantir des prestations de qualité, une communication transparente et un suivi rigoureux,
+        afin d’assurer la pleine satisfaction de nos clients.
+      </p>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
       <a href="mentions-legales.html">Mentions légales</a> |
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
+
 </body>
 </html>
