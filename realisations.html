@@ -5,21 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez les réalisations de GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe : chantiers de construction, rénovation et aménagement.">
   <title>Réalisations - GOLD S CONSTRUCTION ET RENOVATION</title>
-   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .header {
+      background-color: #000;
+      color: gold;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 150px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    .nav a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .realisations {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+    }
+
+    .galerie {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-around;
+    }
+
+    .projet {
+      width: 30%;
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .projet img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .projet h3 {
+      font-size: 1.5em;
+      margin: 15px;
+    }
+
+    .projet p {
+      font-size: 1em;
+      margin: 0 15px 15px;
+      color: #666;
+    }
+
+    .projet:hover {
+      transform: translateY(-10px);
+    }
+
+    .footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .projet {
+        width: 48%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projet {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-   <header class="header">
-  <img src="Logo.png" alt="Logo GOLD S" class="logo">
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="header">
+    <img src="Logo.png" alt="Logo GOLD S" class="logo">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="realisations">
     <section class="intro">
@@ -45,7 +179,6 @@
         <h3>Aménagement extérieur à Le Gosier</h3>
         <p>Création d’une terrasse en bois exotique et pose de clôtures modernes pour une villa en bord de mer.</p>
       </article>
-
       <!-- Tu peux dupliquer ces blocs pour ajouter d'autres projets -->
     </section>
   </main>
@@ -53,6 +186,7 @@
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>
