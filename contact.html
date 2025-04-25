@@ -3,163 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe." />
-  <meta name="keywords" content="contact, construction, rénovation, Guadeloupe, GOLD S Construction" />
-  <meta name="author" content="GOLD S Construction et Rénovation" />
-  <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
-
+  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION. Laissez votre avis, découvrez ceux des autres clients. Disponible en Guadeloupe." />
+  <title>Contact & Avis - GOLD S CONSTRUCTION ET RENOVATION</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     body {
-      font-family: "Times New Roman", Georgia, serif;
+      font-family: "Times New Roman", serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
       color: #000;
-      line-height: 1.6;
     }
-
-    .header {
-      background-color: #808080;
-      color: gold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em;
-      flex-wrap: wrap;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      height: 50px;
-    }
-
-    .company-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: gold;
-    }
-
-    .nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 15px;
-      margin: 0;
-    }
-
-    .nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
-      color: #ffcc00;
-    }
-
-    .contact-page {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .contact-form-section,
-    .contact-info,
-    .avis-form-section {
-      margin-bottom: 30px;
-    }
-
-    .contact-form, .avis-form-section form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    input, textarea, select {
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 10px;
-      background-color: #FFD700;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #E5C200;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-    }
-
-    .footer {
+    .header, .footer {
       background-color: #808080;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 1em;
     }
-
-    .footer a {
+    .company-name {
+      font-size: 1.8em;
+      font-weight: bold;
       color: gold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0 0;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
       text-decoration: none;
+      font-weight: bold;
     }
-
-    .footer a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #ffcc00;
     }
-
-    /* Style for WhatsApp, Mail and Phone widgets */
-    .contact-widget {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+    .contact-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      color: #222;
+      border-left: 5px solid gold;
+      padding-left: 15px;
+      margin-top: 40px;
+    }
+    .info-block {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    form {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      margin-top: 20px;
     }
-
-    .widget-icon {
-      background-color: #25d366;
-      border-radius: 50%;
-      padding: 10px;
-      color: white;
-      font-size: 24px;
+    input, textarea, select {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font-family: "Times New Roman", serif;
+    }
+    button {
+      padding: 12px;
+      background-color: gold;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
       cursor: pointer;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      font-family: "Times New Roman", serif;
     }
-
-    .widget-icon.phone {
-      background-color: #4CAF50;
+    .avis-average {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
     }
-
-    .widget-icon.mail {
-      background-color: #f44336;
+    .avis-list .avis-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
     }
-
+    .widget-bar {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .widget-bar a {
+      background-color: gold;
+      color: #000;
+      padding: 12px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="header">
-    <div class="logo-container">
-      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
-      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
-    </div>
-    <nav class="nav">
+    <div class="company-name">GOLD S CONSTRUCTION ET RENOVATION</div>
+    <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
@@ -170,87 +130,87 @@
     </nav>
   </header>
 
-  <main class="contact-page">
-    <!-- Section coordonnées -->
-    <section class="contact-info">
-      <h2>Nos coordonnées</h2>
-      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">+590 590 57 07 11</a></p>
+  <div class="contact-page">
+    <h2>Contactez-nous</h2>
+    <div class="info-block">
+      <p><strong>Adresse :</strong> 123 Rue du BTP, Pointe-à-Pitre, Guadeloupe</p>
+      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">05 90 57 07 11</a></p>
       <p><strong>Email :</strong> <a href="mailto:goldsconstruction1991@gmail.com">goldsconstruction1991@gmail.com</a></p>
-      <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
-      <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Cliquez ici pour discuter</a></p>
-    </section>
+    </div>
 
-    <!-- Formulaire de contact -->
-    <section class="contact-form-section">
-      <h1>Contactez-nous</h1>
-      <form action="https://formsubmit.co/goldsconstruction1991@gmail.com" method="POST" class="contact-form">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
+    <form action="https://formspree.io/f/mayrqyjl" method="POST">
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
+    <h2>Laissez un avis</h2>
+    <form id="avis-form">
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <select name="note" required>
+        <option value="">Note (étoiles)</option>
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★☆ (4)</option>
+        <option value="3">★★★☆☆ (3)</option>
+        <option value="2">★★☆☆☆ (2)</option>
+        <option value="1">★☆☆☆☆ (1)</option>
+      </select>
+      <textarea name="commentaire" placeholder="Votre commentaire (facultatif)" rows="4"></textarea>
+      <button type="submit">Envoyer l'avis</button>
+    </form>
 
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tonsite.com/merci.html">
-
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-
-    <!-- Section Avis -->
-    <section class="avis-form-section">
-      <h2>Laisser un avis</h2>
-      <form action="https://formsubmit.co/goldsconstruction1991@gmail.com" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-
-        <label for="avis">Votre avis :</label>
-        <textarea id="avis" name="message" rows="5" placeholder="Laissez un commentaire (facultatif)"></textarea>
-
-        <label for="note">Note :</label>
-        <select id="note" name="note" required>
-          <option value="5">⭐⭐⭐⭐⭐</option>
-          <option value="4">⭐⭐⭐⭐</option>
-          <option value="3">⭐⭐⭐</option>
-          <option value="2">⭐⭐</option>
-          <option value="1">⭐</option>
-        </select>
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tonsite.com/merci.html">
-
-        <button type="submit">Envoyer l'avis</button>
-      </form>
-    </section>
-
-    <!-- Carte Google Maps -->
-    <section class="map-section">
-      <h2>Localisation</h2>
-      <iframe src="https://www.google.com/maps?q=Immeuble+SOCOGARE,+rue+Ferdinand+FORESTE,+97122+BAIE-MAHAULT&output=embed"></iframe>
-    </section>
-  </main>
+    <div class="avis-average" id="avis-moyenne">Moyenne : -</div>
+    <div class="avis-list" id="avis-list"></div>
+  </div>
 
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="politique-confidentialite.html">Politique de confidentialité</a>
-    </p>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION</p>
   </footer>
 
-  <!-- Contact Widgets (WhatsApp, Phone, Mail) -->
-  <div class="contact-widget">
-    <a href="https://wa.me/590690429400" target="_blank" class="widget-icon">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="tel:+590590570711" class="widget-icon phone">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="mailto:goldsconstruction1991@gmail.com" class="widget-icon mail">
-      <i class="fas fa-envelope"></i>
-    </a>
+  <div class="widget-bar">
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+590590570711" title="Téléphone"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
   </div>
+
+  <script>
+    const form = document.getElementById("avis-form");
+    const avisList = document.getElementById("avis-list");
+    const moyenneContainer = document.getElementById("avis-moyenne");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch("https://script.google.com/macros/s/AKfycbyh-a0ZhizjFAbfptH391bia8_gy9bNkFtZkisdPENcX23Tk4EKpsHArVP9DmZCxM2ZsQ/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("Merci pour votre avis !");
+        form.reset();
+        loadAvis(); // recharger les avis
+      });
+    });
+
+    function loadAvis() {
+      fetch("https://script.google.com/macros/s/AKfycbyh-a0ZhizjFAbfptH391bia8_gy9bNkFtZkisdPENcX23Tk4EKpsHArVP9DmZCxM2ZsQ/exec")
+        .then(res => res.json())
+        .then(data => {
+          if (!Array.isArray(data)) return;
+          avisList.innerHTML = "";
+          let total = 0;
+          data.forEach(item => {
+            total += parseInt(item.note);
+            avisList.innerHTML += `<div class="avis-item"><strong>${item.nom}</strong> - ${"★".repeat(item.note)}<br>${item.commentaire || ""}</div>`;
+          });
+          const moyenne = total / data.length;
+          moyenneContainer.textContent = `Moyenne : ${moyenne.toFixed(1)} / 5`;
+        });
+    }
+
+    loadAvis();
+  </script>
 </body>
 </html>
