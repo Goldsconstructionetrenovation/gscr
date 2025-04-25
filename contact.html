@@ -5,27 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe.">
   <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
-  
-  <!-- Lien vers Font Awesome (si tu choisis cette version) -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <style>
-    /* CSS général */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+   body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
 
-    /* En-tête */
+
     .header {
-      background-color: #333;
+      background-color: #000;
+      color: gold;
       padding: 20px;
       text-align: center;
     }
 
     .logo {
       width: 150px;
+      margin: 0 auto;
     }
 
     .nav ul {
@@ -35,106 +34,83 @@
 
     .nav ul li {
       display: inline;
-      margin: 0 10px;
+      margin: 0 15px;
     }
 
     .nav ul li a {
-      color: white;
+      color: gold;
       text-decoration: none;
     }
 
-    /* Contenu principal */
+    .nav ul li a:hover {
+      color: #fff;
+    }
+
     .contact-page {
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .contact-info,
-    .map-section,
-    .contact-form-section {
-      margin-bottom: 20px;
+    .contact-info, .contact-form-section, .map-section, .avis-form-section {
+      margin-bottom: 30px;
     }
 
-    .contact-form {
+    .contact-form, .avis-form-section form {
       display: flex;
       flex-direction: column;
     }
 
-    .contact-form label {
-      margin-bottom: 5px;
-    }
-
     .contact-form input,
-    .contact-form textarea {
+    .contact-form textarea,
+    .avis-form-section textarea,
+    .avis-form-section select,
+    .avis-form-section input {
       margin-bottom: 10px;
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
 
-    .contact-form button {
+    .contact-form button,
+    .avis-form-section button {
       padding: 10px;
-      background-color: #FFD700; /* Couleur or */
+      background-color: #FFD700;
       color: black;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
 
-    .contact-form button:hover {
-      background-color: #E5C200; /* Couleur or foncée */
+    .contact-form button:hover,
+    .avis-form-section button:hover {
+      background-color: #E5C200;
     }
 
-    /* Section des coordonnées */
-    .contact-info h2 {
-      margin-bottom: 10px;
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
     }
 
-    .contact-info p {
-      font-size: 1.1em;
+    .footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    /* Boutons flottants de contact */
-    .contact-floating {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .footer a {
+      color: gold;
+      text-decoration: none;
     }
 
-    .btn-float {
-      background-color: #FFD700; /* Couleur or */
-      color: black;
-      padding: 15px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s;
-    }
-
-    .btn-float:hover {
-      background-color: #E5C200; /* Couleur or foncée */
-    }
-
-    /* Pour les icônes Font Awesome */
-    .btn-float i {
-      font-size: 24px; /* Taille des icônes */
-    }
-
-    /* Icônes personnalisées */
-    .btn-float img {
-      width: 30px;
-      height: 30px;
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
   <header class="header">
     <img src="Logo.png" alt="Logo GOLD S" class="logo">
     <nav class="nav">
@@ -149,7 +125,6 @@
   </header>
 
   <main class="contact-page">
-    <!-- Section des coordonnées -->
     <section class="contact-info">
       <h2>Nos coordonnées</h2>
       <p><strong>Téléphone :</strong> <a href="tel:+590590570711">+590 590 57 07 11</a></p>
@@ -158,10 +133,9 @@
       <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Cliquez ici pour discuter</a></p>
     </section>
 
-    <!-- Section du formulaire de contact -->
     <section class="contact-form-section">
       <h1>Contactez-nous</h1>
-      <form action="mailto:goldsconstruction1991@gmail.com" method="POST" class="contact-form" enctype="multipart/form-data">
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required>
 
@@ -175,35 +149,36 @@
       </form>
     </section>
 
-    <!-- Section de la carte -->
     <section class="map-section">
       <h2>Localisation</h2>
-      <iframe
-        src="https://www.google.com/maps?q=Immeuble+SOCOGARE,+rue+Ferdinand+FORESTE,+97122+BAIE-MAHAULT&output=embed"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
+      <iframe src="https://www.google.com/maps?q=Immeuble+SOCOGARE,+rue+Ferdinand+FORESTE,+97122+BAIE-MAHAULT&output=embed"></iframe>
+    </section>
+
+    <section class="avis-form-section">
+      <h2>Laisser un avis</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="avis">Votre avis :</label>
+        <textarea id="avis" name="message" rows="5" required></textarea>
+
+        <label for="note">Note :</label>
+        <select id="note" name="note" required>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="1">⭐</option>
+        </select>
+
+        <button type="submit">Envoyer l'avis</button>
+      </form>
     </section>
   </main>
 
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
   </footer>
-
-  <!-- Boutons de contact flottants -->
-  <div class="contact-floating">
-    <a href="tel:+590590570711" class="btn-float phone" title="Appeler">
-      <!-- Icône Font Awesome (téléphone) -->
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="mailto:goldsconstruction1991@gmail.com" class="btn-float mail" title="Envoyer un mail">
-      <!-- Icône Font Awesome (email) -->
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/590690429400" class="btn-float whatsapp" title="WhatsApp" target="_blank">
-      <!-- Icône Font Awesome (WhatsApp) -->
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
-
 </body>
 </html>
