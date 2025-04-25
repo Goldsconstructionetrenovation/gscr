@@ -1,31 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Votre projet, notre savoir-faire, GOLD S CONSTRUCTION ET RENOVATION. Contactez-nous pour un devis gratuit.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Votre projet, notre savoir-faire, GOLD S CONSTRUCTION ET RENOVATION. Contactez-nous pour un devis gratuit." />
   <title>GOLD S CONSTRUCTION ET RENOVATION - Accueil</title>
-   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: "Times New Roman", Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #000;
+      color: gold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1em;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav {
+      flex-grow: 1;
+      text-align: right;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+
+    .nav a:focus {
+      outline: 2px solid gold;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background-color: #f5f5f5;
+    }
+
+    .contact-links a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-links a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('images/banner.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: gold;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #ffcc00;
+    }
+
+    .presentation,
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2, section h3 {
+      color: #000;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1em;
+        width: 100%;
+        text-align: left;
+      }
+
+      .hero {
+        padding: 60px 10px;
+      }
+
+      .cta-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .presentation,
+      section {
+        padding: 20px 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-   <header class="header">
-  <img src="Logo.png" alt="Logo GOLD S" class="logo">
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-    <div class="contact-links">
-      <a href="tel:+590590570711">📞 0590 57 07 11</a>
-      <a href="mailto:goldsconstruction1991@gmail.com">📧 Email</a>
-      <a href="https://wa.me/590690429400" target="_blank">💬 WhatsApp</a>
-    </div>
+  <header class="header">
+    <img src="Logo.png" alt="Logo GOLD S" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+
+  <div class="contact-links">
+    <a href="tel:+590590570711">📞 0590 57 07 11</a>
+    <a href="mailto:goldsconstruction1991@gmail.com">📧 Email</a>
+    <a href="https://wa.me/590690429400" target="_blank">💬 WhatsApp</a>
+  </div>
 
   <section class="hero">
     <div class="hero-content">
@@ -43,8 +203,10 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </p>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 </html>
