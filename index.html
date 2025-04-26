@@ -69,7 +69,8 @@
     .nav a:focus {
       outline: 2px solid gold;
     }
- /* Floating widgets with animation */
+
+    /* Floating widgets with animation */
     .floating-widgets {
       position: fixed;
       bottom: 20px;
@@ -99,21 +100,32 @@
       color: #000;
       transform: scale(1.1);
     }
-    /* Contact links */
-    .contact-links {
-      text-align: center;
-      margin: 10px 0;
-    }
 
-    .contact-links a {
-      margin: 0 10px;
+    /* Scroll to top button */
+    .scroll-to-top {
+      display: none; /* caché par défaut */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #808080;
       color: gold;
-      text-decoration: none;
-      font-size: 18px;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 22px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
     }
 
-    .contact-links a:hover {
-      color: #ffcc00;
+    .scroll-to-top.show {
+      display: flex; /* apparaît quand on descend */
+      opacity: 1;
+    }
+
+    .scroll-to-top:hover {
+      background-color: #ffcc00;
+      color: black;
+      transform: scale(1.1);
     }
 
     /* Hero section with slideshow */
@@ -125,7 +137,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      width: 100%; /* S'assure que l'élément prend toute la largeur */
+      width: 100%;
     }
 
     .hero-slider {
@@ -141,10 +153,10 @@
     }
 
     .hero-slider img {
-      width: 100%; /* L'image prend toute la largeur de la page */
-      height: 100%; /* L'image prend également toute la hauteur de la section */
-      object-fit: cover; /* Couvre toute la section sans déformation */
-      object-position: center; /* Centre l'image dans la section */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       position: absolute;
       opacity: 0;
       transition: opacity 1s ease-in-out;
@@ -157,7 +169,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      background-color: rgba(0, 0, 0, 0.5); /* Superposition sombre pour améliorer la lisibilité */
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 30px;
       border-radius: 10px;
       color: white;
@@ -198,7 +210,7 @@
 
     /* Footer */
     .footer {
-      background-color: #808080; /* Fond gris */
+      background-color: #808080;
       color: white;
       text-align: center;
       padding: 20px;
@@ -248,7 +260,8 @@
     </nav>
   </header>
 
-     <div class="floating-widgets">
+  <!-- Floating widgets -->
+  <div class="floating-widgets">
     <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
     <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
     <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -256,7 +269,7 @@
     <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
   </div>
 
-
+  <!-- Hero section -->
   <section class="hero">
     <div class="hero-slider">
       <img src="slide4.jpg" alt="Construction et rénovation en Guadeloupe" loading="lazy" class="active" />
@@ -268,6 +281,7 @@
     </div>
   </section>
 
+  <!-- Presentation section -->
   <main class="presentation">
     <section class="intro">
       <h2>Qui sommes-nous ?</h2>
@@ -277,6 +291,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
       <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
@@ -285,14 +300,35 @@
   </footer>
 
   <script>
+    // Slider images
     const slides = document.querySelectorAll('.hero-slider img');
     let index = 0;
-
     setInterval(() => {
       slides[index].classList.remove('active');
       index = (index + 1) % slides.length;
       slides[index].classList.add('active');
     }, 4000);
+
+    // Scroll to top button
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 </body>
 </html>
