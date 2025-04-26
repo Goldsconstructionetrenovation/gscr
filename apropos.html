@@ -72,29 +72,47 @@
     /* Main */
     main {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
 
     main h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #000;
-      border-bottom: 2px solid gold;
+      border-bottom: 3px solid gold;
       display: inline-block;
     }
 
-    main h2 {
-      margin-top: 30px;
-      color: #000;
+    section#content-block {
+      background-color: #f5f5f5;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    main p, main ul {
-      margin-bottom: 20px;
+    h2 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    p, ul {
       text-align: justify;
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
 
-    /* Widgets flottants */
+    ul {
+      padding-left: 20px;
+    }
+
+    .faq h3 {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    /* Floating widgets with animation */
     .floating-widgets {
       position: fixed;
       bottom: 20px;
@@ -103,23 +121,37 @@
       flex-direction: column;
       gap: 10px;
       z-index: 1000;
+      animation: fadeInRight 1s ease forwards;
+      opacity: 0;
     }
 
     .floating-widgets a {
       background-color: #808080;
       color: gold;
-      padding: 10px;
+      padding: 12px;
       border-radius: 50%;
       text-align: center;
       text-decoration: none;
-      font-size: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: background-color 0.3s;
+      font-size: 22px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      transition: transform 0.3s, background-color 0.3s;
     }
 
     .floating-widgets a:hover {
       background-color: #ffcc00;
       color: #000;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     /* Footer */
@@ -173,51 +205,64 @@
   </header>
 
   <main>
-    <section id="a-propos">
-      <h1>À propos de GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe</h1>
+    <h1>À propos de GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe</h1>
 
+    <section id="content-block">
       <p>Depuis 2018, <strong>GOLD S CONSTRUCTION ET RENOVATION</strong> accompagne ses clients dans la <strong>réalisation de projets de construction, rénovation et aménagement en Guadeloupe</strong>. Nous intervenons sur des espaces intérieurs comme extérieurs, en garantissant un service de haute qualité, dans le respect des normes en vigueur.</p>
+    </section>
 
+    <section id="content-block">
       <h2>Notre entreprise de construction et rénovation en Guadeloupe</h2>
       <p>Passionnés par notre métier, nous transformons vos idées en projets concrets, en alliant esthétique, fonctionnalité et durabilité. Chaque intervention est réalisée avec soin, pour répondre parfaitement à vos attentes et assurer votre satisfaction totale.</p>
+    </section>
 
+    <section id="content-block">
       <h2>Nos valeurs chez GOLD S CONSTRUCTION ET RENOVATION</h2>
       <ul>
-        <li><strong>Qualité du travail :</strong> Chaque projet est une occasion de démontrer notre expertise à travers des réalisations soignées, durables et conformes aux normes les plus strictes.</li>
-        <li><strong>Transparence dans les échanges :</strong> Nous privilégions une communication claire, honnête et fluide tout au long du chantier.</li>
-        <li><strong>Satisfaction client :</strong> Votre satisfaction est notre priorité absolue. Nous vous offrons un suivi personnalisé avant, pendant et après vos travaux.</li>
+        <li><strong>Qualité du travail :</strong> Réalisations soignées, durables et aux normes.</li>
+        <li><strong>Transparence dans les échanges :</strong> Communication honnête et fluide.</li>
+        <li><strong>Satisfaction client :</strong> Suivi personnalisé avant, pendant et après.</li>
       </ul>
+    </section>
 
+    <section id="content-block">
       <h2>Une équipe de professionnels qualifiés en Guadeloupe</h2>
-      <p>Notre équipe est composée de professionnels expérimentés, formés aux dernières techniques de construction et de rénovation. Chaque membre, qu’il soit ouvrier ou chef de chantier, s’engage à respecter vos exigences et à livrer des projets de haute qualité.</p>
+      <p>Notre équipe est composée de professionnels expérimentés, formés aux dernières techniques. Chaque membre respecte vos exigences et livre des projets de haute qualité.</p>
+    </section>
 
+    <section id="content-block">
       <h2>Notre mission : Réaliser vos projets de construction et de rénovation</h2>
       <p>Que vous souhaitiez <strong>construire votre maison en Guadeloupe</strong>, <strong>rénover un espace intérieur</strong> ou <strong>aménager vos extérieurs</strong>, nous mettons tout en œuvre pour faire de vos projets une réussite, dans le respect des délais et de votre budget.</p>
+    </section>
 
+    <section id="content-block">
       <h2>Nos engagements</h2>
       <ul>
         <li>Accompagnement personnalisé de A à Z</li>
         <li>Respect des délais et du budget convenu</li>
         <li>Utilisation de matériaux de qualité et techniques modernes</li>
         <li>Suivi régulier et communication transparente</li>
-        <li>Couverture par une assurance décennale pour une totale tranquillité d’esprit</li>
+        <li>Couverture par une assurance décennale</li>
       </ul>
+    </section>
 
+    <section id="content-block">
       <h2>Pourquoi choisir GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe ?</h2>
       <p>Chez GOLD S CONSTRUCTION ET RENOVATION, chaque chantier est bien plus qu'un simple travail : c'est une opportunité de concrétiser vos rêves avec soin, professionnalisme et durabilité.</p>
+    </section>
 
+    <section id="content-block">
       <h2>FAQ - Questions fréquentes</h2>
       <div class="faq">
         <h3>Quels types de travaux réalisez-vous en Guadeloupe ?</h3>
-        <p>Nous proposons des travaux de construction, rénovation intérieure et extérieure, ainsi que l'aménagement d'espaces résidentiels et professionnels.</p>
+        <p>Construction, rénovation intérieure et extérieure, aménagement d'espaces résidentiels et professionnels.</p>
 
         <h3>Proposez-vous des devis gratuits ?</h3>
-        <p>Oui, nous réalisons des devis gratuits et personnalisés après analyse de vos besoins.</p>
+        <p>Oui, devis gratuits et personnalisés après analyse de vos besoins.</p>
 
         <h3>Quels délais pour un projet de rénovation ?</h3>
-        <p>Les délais varient selon la taille et la complexité du projet. Nous nous engageons à respecter les échéances annoncées lors de la signature du contrat.</p>
+        <p>Selon la taille et la complexité du projet, nous respectons les délais convenus lors de la signature.</p>
       </div>
-
       <p>Découvrez également nos <a href="services.html">services de rénovation et construction en Guadeloupe</a>.</p>
     </section>
   </main>
