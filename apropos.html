@@ -69,22 +69,6 @@
       outline: 2px solid gold;
     }
 
-    .contact-links {
-      text-align: center;
-      margin: 10px 0;
-    }
-
-    .contact-links a {
-      margin: 0 10px;
-      color: gold;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .contact-links a:hover {
-      color: #ffcc00;
-    }
-
     /* Main */
     main {
       padding: 40px 20px;
@@ -105,9 +89,37 @@
       color: #000;
     }
 
-    main p {
+    main p, main ul {
       margin-bottom: 20px;
       text-align: justify;
+    }
+
+    /* Widgets flottants */
+    .floating-widgets {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .floating-widgets a {
+      background-color: #808080;
+      color: gold;
+      padding: 10px;
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+    }
+
+    .floating-widgets a:hover {
+      background-color: #ffcc00;
+      color: #000;
     }
 
     /* Footer */
@@ -160,47 +172,63 @@
     </nav>
   </header>
 
-  <div class="contact-links">
-    <a href="tel:+590590570711" title="Appeler">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
-
   <main>
-    <h1>À propos de GOLD S CONSTRUCTION ET RENOVATION</h1>
+    <section id="a-propos">
+      <h1>À propos de GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe</h1>
 
-    <p>Depuis sa création en 2018, GOLD S CONSTRUCTION ET RENOVATION se distingue par son engagement à accompagner ses clients dans la réalisation de leurs projets de construction, rénovation et aménagement, que ce soit pour des espaces intérieurs ou extérieurs, en Guadeloupe.</p>
+      <p>Depuis 2018, <strong>GOLD S CONSTRUCTION ET RENOVATION</strong> accompagne ses clients dans la <strong>réalisation de projets de construction, rénovation et aménagement en Guadeloupe</strong>. Nous intervenons sur des espaces intérieurs comme extérieurs, en garantissant un service de haute qualité, dans le respect des normes en vigueur.</p>
 
-    <p>Nous sommes une entreprise qui se distingue par sa passion du métier et son savoir-faire. Notre priorité est de transformer vos idées en projets concrets, tout en assurant une qualité de service irréprochable et un respect des normes de sécurité. À travers chaque intervention, nous veillons à allier esthétique, fonctionnalité et durabilité, pour que chaque réalisation soit à la hauteur de vos attentes.</p>
+      <h2>Notre entreprise de construction et rénovation en Guadeloupe</h2>
+      <p>Passionnés par notre métier, nous transformons vos idées en projets concrets, en alliant esthétique, fonctionnalité et durabilité. Chaque intervention est réalisée avec soin, pour répondre parfaitement à vos attentes et assurer votre satisfaction totale.</p>
 
-    <h2>Nos valeurs</h2>
-    <p><strong>Qualité du travail :</strong> Chaque projet est une nouvelle opportunité pour nous de démontrer notre expertise. Nous mettons un point d'honneur à réaliser des travaux soignés, durables et conformes aux normes les plus strictes.</p>
-    <p><strong>Transparence dans les échanges :</strong> Nous croyons qu'une communication claire et honnête est essentielle pour une collaboration fructueuse. Nous vous tenons informé à chaque étape du projet et veillons à répondre à toutes vos questions de manière précise.</p>
-    <p><strong>Satisfaction client :</strong> Votre satisfaction est notre principale préoccupation. Nous nous engageons à comprendre vos besoins et à y répondre avec professionnalisme, tout en assurant le suivi nécessaire après la livraison de vos travaux.</p>
+      <h2>Nos valeurs chez GOLD S CONSTRUCTION ET RENOVATION</h2>
+      <ul>
+        <li><strong>Qualité du travail :</strong> Chaque projet est une occasion de démontrer notre expertise à travers des réalisations soignées, durables et conformes aux normes les plus strictes.</li>
+        <li><strong>Transparence dans les échanges :</strong> Nous privilégions une communication claire, honnête et fluide tout au long du chantier.</li>
+        <li><strong>Satisfaction client :</strong> Votre satisfaction est notre priorité absolue. Nous vous offrons un suivi personnalisé avant, pendant et après vos travaux.</li>
+      </ul>
 
-    <h2>Notre équipe</h2>
-    <p>Nous sommes fières de compter parmi nos rangs des professionnels expérimentés et passionnés par leur métier. Chaque membre de notre équipe, qu'il soit sur le terrain ou en gestion, met son expertise et son engagement au service de vos projets. Ensemble, nous œuvrons pour garantir la réussite et la pérennité de chaque chantier, en respectant à la fois vos exigences et les standards les plus élevés.</p>
+      <h2>Une équipe de professionnels qualifiés en Guadeloupe</h2>
+      <p>Notre équipe est composée de professionnels expérimentés, formés aux dernières techniques de construction et de rénovation. Chaque membre, qu’il soit ouvrier ou chef de chantier, s’engage à respecter vos exigences et à livrer des projets de haute qualité.</p>
 
-    <h2>Notre mission</h2>
-    <p>Notre mission est de faire de vos projets une réalité tangible et de qualité. Qu’il s’agisse de la construction d’une maison, de la rénovation d’un espace de vie ou de l’aménagement de vos extérieurs, nous mettons tout en œuvre pour que vos objectifs soient atteints, dans les meilleures conditions possibles. Grâce à notre expérience, nous pouvons répondre à une large variété de demandes, en nous adaptant à chaque besoin spécifique, qu’il provienne d’un particulier ou d’un professionnel.</p>
+      <h2>Notre mission : Réaliser vos projets de construction et de rénovation</h2>
+      <p>Que vous souhaitiez <strong>construire votre maison en Guadeloupe</strong>, <strong>rénover un espace intérieur</strong> ou <strong>aménager vos extérieurs</strong>, nous mettons tout en œuvre pour faire de vos projets une réussite, dans le respect des délais et de votre budget.</p>
 
-    <h2>Nos engagements</h2>
-    <ul>
-      <li>✅ <strong>Accompagnement personnalisé de A à Z :</strong> Nous vous conseillons et vous guidons tout au long de votre projet, du premier contact jusqu’à la finalisation. Votre satisfaction est au cœur de notre approche.</li>
-      <li>✅ <strong>Respect des délais et du budget :</strong> Nous nous engageons à respecter les délais convenus ainsi que le budget défini, tout en vous assurant des prestations de haute qualité.</li>
-      <li>✅ <strong>Matériaux de qualité et techniques modernes :</strong> Nous utilisons des matériaux durables et des méthodes de construction innovantes pour garantir la solidité et la longévité de vos réalisations.</li>
-      <li>✅ <strong>Suivi régulier et communication transparente :</strong> Nous vous tenons informés à chaque étape du projet et restons disponibles pour toute question ou ajustement nécessaire.</li>
-      <li>✅ <strong>Couverture par une assurance décennale</strong> pour vous offrir une tranquillité d’esprit totale sur la solidité et la pérennité des ouvrages réalisés.</li>
-    </ul>
+      <h2>Nos engagements</h2>
+      <ul>
+        <li>Accompagnement personnalisé de A à Z</li>
+        <li>Respect des délais et du budget convenu</li>
+        <li>Utilisation de matériaux de qualité et techniques modernes</li>
+        <li>Suivi régulier et communication transparente</li>
+        <li>Couverture par une assurance décennale pour une totale tranquillité d’esprit</li>
+      </ul>
 
-    <p>Chez GOLD S CONSTRUCTION ET RENOVATION, nous ne considérons pas un chantier simplement comme un travail à réaliser, mais comme un projet à concrétiser avec soin et professionnalisme. Nous mettons tout en œuvre pour faire de vos rêves une réalité tangible et durable.</p>
+      <h2>Pourquoi choisir GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe ?</h2>
+      <p>Chez GOLD S CONSTRUCTION ET RENOVATION, chaque chantier est bien plus qu'un simple travail : c'est une opportunité de concrétiser vos rêves avec soin, professionnalisme et durabilité.</p>
+
+      <h2>FAQ - Questions fréquentes</h2>
+      <div class="faq">
+        <h3>Quels types de travaux réalisez-vous en Guadeloupe ?</h3>
+        <p>Nous proposons des travaux de construction, rénovation intérieure et extérieure, ainsi que l'aménagement d'espaces résidentiels et professionnels.</p>
+
+        <h3>Proposez-vous des devis gratuits ?</h3>
+        <p>Oui, nous réalisons des devis gratuits et personnalisés après analyse de vos besoins.</p>
+
+        <h3>Quels délais pour un projet de rénovation ?</h3>
+        <p>Les délais varient selon la taille et la complexité du projet. Nous nous engageons à respecter les échéances annoncées lors de la signature du contrat.</p>
+      </div>
+
+      <p>Découvrez également nos <a href="services.html">services de rénovation et construction en Guadeloupe</a>.</p>
+    </section>
   </main>
+
+  <div class="floating-widgets">
+    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+  </div>
 
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
