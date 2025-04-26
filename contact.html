@@ -8,11 +8,11 @@
 
   <style>
     /* Style intégré */
-     body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-  }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+    }
 
     .header, .footer {
       background-color: #222;
@@ -103,6 +103,20 @@
     @keyframes fade {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+
+    /* Flèche retour haut */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: gold;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      display: none;
     }
 
     /* Responsive */
@@ -240,6 +254,9 @@
   </p>
 </footer>
 
+<!-- Flèche retour haut -->
+<div class="back-to-top">↑</div>
+
 <!-- Script pour défiler les avis -->
 <script>
 const avisElements = document.querySelectorAll('#avis-container .avis');
@@ -254,6 +271,21 @@ function afficherAvis() {
 
 setInterval(afficherAvis, 5000);
 afficherAvis();
+
+// Flèche retour haut
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = 'block';
+  } else {
+    backToTopButton.style.display = 'none';
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 
 </body>
