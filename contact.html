@@ -1,651 +1,417 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe pour vos projets de construction et rénovation.">
-  <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
-
-  <!-- FontAwesome pour les icônes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- OwlCarousel pour avis en diaporama -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-
-  <style>
-    body {
-      font-family: "Times New Roman", Georgia, serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #000;
-      line-height: 1.6;
-    }
-
-    /* Header et Footer */
-    .header, .footer {
-      background: #808080;
-      color: gold;
-      display: flex;
-      justify-content: space-between; /* Espace entre le logo + nom et le menu */
-      align-items: center;
-      padding: 1em;
-      text-align: center;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      height: 50px;
-    }
-
-    .company-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: gold;
-    }
-
-    .nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav a:hover {
-      color: #ffcc00;
-    }
-
-    /* Widgets flottants */
-    .floating-widgets {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .floating-widgets a {
-      background: gold;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      font-size: 18px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-
-    .floating-widgets a:hover {
-      transform: scale(1.2);
-      background: #ffcc00;
-    }
-
-    /* Sections générales */
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      border-bottom: 2px solid gold;
-      display: inline-block;
-    }
-
-    .contact-info, .contact-form, .avis-section {
-      background: #f9f9f9;
-      padding: 20px;
-      margin-bottom: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .contact-details {
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    .map {
-      width: 100%;
-      height: 300px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .form-container, .avis-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .form-container img, .avis-container img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-    }
-
-    form {
-      flex: 1;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      background: gold;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #ffcc00;
-    }
-
-    /* Avis - Etoiles */
-    .star-rating {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-
-    .star-rating input {
-      display: none;
-    }
-
-    .star-rating label {
-      font-size: 30px;
-      color: #ccc;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .star-rating input:checked ~ label,
-    .star-rating label:hover,
-    .star-rating label:hover ~ label {
-      color: gold;
-    }
-
-    .average-rating {
-      text-align: center;
-      font-size: 24px;
-      color: gold;
-      font-weight: bold;
-      margin: 30px 0 20px 0;
-    }
-
-    /* Carousel Avis */
-    .owl-carousel .item {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      margin: 10px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .form-container, .avis-container {
-        flex-direction: column;
-      }
-      .nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 1em;
-      }
-      .header, .footer {
-        flex-direction: column;
-        text-align: center;
-      }
-      .footer p {
-        font-size: 0.9em;
-      }
-    }
-  </style>
-
-</head>
-<body>
-
-<header class="header">
-  <div class="logo-container">
-    <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
-    <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
-  </div>
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- Widgets flottants -->
-<div class="floating-widgets">
-  <a href="https://wa.me/590690429400" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  <a href="mailto:goldsconstruction1991@gmail.com"><i class="fas fa-envelope"></i></a>
-  <a href="tel:+590590570711"><i class="fas fa-phone-alt"></i></a>
-  <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="#"><i class="fas fa-arrow-up"></i></a>
-</div>
-
-<main>
-  <section class="section contact-info">
-    <h2>Contactez-nous</h2>
-    <div class="contact-details">
-      <p><strong>Adresse :</strong> Immeuble Socogare, Rue Ferdinand Foreste, 97122 Baie-Mahault</p>
-      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
-      <p><strong>Horaires :</strong> 7h - 14h du Lundi au Vendredi</p>
-      <p><strong>Facebook :</strong> <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">Voir notre page</a></p>
-      <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Discuter</a></p>
-    </div>
-    <iframe src="https://www.google.com/maps?q=Trimarg+Guadeloupe&output=embed" class="map"></iframe>
-  </section>
-
-  <section class="section contact-form">
-    <h2>Formulaire de Contact</h2>
-    <div class="form-container">
-      <img src="chemin/vers/image-contact.jpg" alt="Contactez-nous">
-      <form action="https://formspree.io/f/mjkwkwzj" method="POST">
-        <input type="text" name="Nom-Prénom" placeholder="Nom - Prénom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="Téléphone" placeholder="Téléphone" required>
-        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="section avis-section">
-    <h2>Avis</h2>
-    <div class="avis-container">
-      <img src="chemin/vers/image-avis.jpg" alt="Avis Clients">
-      <form action="https://formspree.io/f/mjkwkwzj" method="POST" style="flex:1;">
-        <input type="text" name="Nom" placeholder="Votre nom" required>
-        <div class="star-rating">
-          <input type="radio" id="5-stars" name="Note" value="5" required><label for="5-stars">&#9733;</label>
-          <input type="radio" id="4-stars" name="Note" value="4"><label for="4-stars">&#9733;</label>
-          <input type="radio" id="3-stars" name="Note" value="3"><label for="3-stars">&#9733;</label>
-          <input type="radio" id="2-stars" name="Note" value="2"><label for="2-stars">&#9733;</label>
-          <input type="radio" id="1-star" name="Note" value="1"><label for="1-star">&#9733;</label>
-        </div>
-        <textarea name="Commentaire" rows="4" placeholder="Votre commentaire (facultatif)"></textarea>
-        <button type="submit">Laisser un avis</button>
-      </form>
-    </div>
-
-    <div class="average-rating">Note moyenne : 4.8/5 ⭐️</div>
-
-    <div class="owl-carousel owl-theme">
-      <div class="item">
-        <h4>Jean D.</h4>
-        <p>⭐️⭐️⭐️⭐️Here’s an updated version of the HTML code, with the header and footer styles updated as you requested, and a more responsive layout for mobile devices.
-
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe pour vos projets de construction et rénovation.">
-  <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
-
-  <!-- FontAwesome pour les icônes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- OwlCarousel pour avis en diaporama -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-
-  <style>
-    body {
-      font-family: "Times New Roman", Georgia, serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #000;
-      line-height: 1.6;
-    }
-
-    /* Header et Footer */
-    .header, .footer {
-      background: #808080;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
-      text-align: center;
-      flex-wrap: wrap;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      height: 50px;
-    }
-
-    .company-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: gold;
-    }
-
-    .nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav a:hover {
-      color: #ffcc00;
-    }
-
-    /* Widgets flottants */
-    .floating-widgets {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .floating-widgets a {
-      background: gold;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      font-size: 18px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-
-    .floating-widgets a:hover {
-      transform: scale(1.2);
-      background: #ffcc00;
-    }
-
-    /* Sections générales */
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      border-bottom: 2px solid gold;
-      display: inline-block;
-    }
-
-    .contact-info, .contact-form, .avis-section {
-      background: #f9f9f9;
-      padding: 20px;
-      margin-bottom: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .contact-details {
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    .map {
-      width: 100%;
-      height: 300px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .form-container, .avis-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .form-container img, .avis-container img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-    }
-
-    form {
-      flex: 1;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      background: gold;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #ffcc00;
-    }
-
-    /* Avis - Etoiles */
-    .star-rating {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-
-    .star-rating input {
-      display: none;
-    }
-
-    .star-rating label {
-      font-size: 30px;
-      color: #ccc;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .star-rating input:checked ~ label,
-    .star-rating label:hover,
-    .star-rating label:hover ~ label {
-      color: gold;
-    }
-
-    .average-rating {
-      text-align: center;
-      font-size: 24px;
-      color: gold;
-      font-weight: bold;
-      margin: 30px 0 20px 0;
-    }
-
-    /* Carousel Avis */
-    .owl-carousel .item {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      margin: 10px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .form-container, .avis-container {
-        flex-direction: column;
-      }
-      .nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 1em;
-      }
-      .header, .footer {
-        flex-direction: column;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe pour vos projets de construction et rénovation.">
+    <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
+
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- OwlCarousel pour avis en diaporama -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <style>
+        body {
+            font-family: "Times New Roman", Georgia, serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        /* Loader */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header et Footer */
+        .header, .footer {
+            background: #808080;
+            color: gold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .company-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: gold;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Widgets flottants */
+        .floating-widgets {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .floating-widgets a {
+            background: gold;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .floating-widgets a:hover {
+            transform: scale(1.2);
+            background: #ffcc00;
+        }
+
+        /* Sections générales */
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid gold;
+            display: inline-block;
+        }
+
+        .contact-info, .contact-form, .avis-section {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        .form-container, .avis-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-container img, .avis-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        form {
+            flex: 1;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: gold;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffcc00;
+        }
+
+        /* Confirmation Message */
+        .form-message {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Avis - Etoiles */
+        .star-rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: gold;
+        }
+
+        /* Carousel Avis */
+        .owl-carousel .item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-container, .avis-container {
+                flex-direction: column;
+            }
+            .nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 1em;
+            }
+            .header, .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo-container">
-      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
-      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+
+    <!-- Loader -->
+    <div class="loader-wrapper" id="loader-wrapper">
+        <div class="loader"></div>
     </div>
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="realisations.html">Réalisations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="floating-widgets">
-    <a href="https://wa.me/590690429400" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:goldsconstruction1991@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="tel:+590590570711"><i class="fas fa-phone-alt"></i></a>
-    <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fas fa-arrow-up"></i></a>
-  </div>
-
-  <main>
-    <section class="section contact-info">
-      <h2>Contactez-nous</h2>
-      <div class="contact-details">
-        <p><strong>Adresse :</strong> Immeuble Socogare, Rue Ferdinand Foreste, 97122 Baie-Mahault</p>
-        <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
-        <p><strong>Horaires :</strong> 7h - 14h du Lundi au Vendredi</p>
-        <p><strong>Facebook :</strong> <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">Voir notre page</a></p>
-        <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Discuter</a></p>
-      </div>
-      <iframe src="https://www.google.com/maps?q=Trimarg+Guadeloupe&output=embed" class="map"></iframe>
-    </section>
-
-    <section class="section contact-form">
-      <h2>Formulaire de Contact</h2>
-      <div class="form-container">
-        <img src="chemin/vers/image-contact.jpg" alt="Contactez-nous">
-        <form action="https://formspree.io/f/mjkwkwzj" method="POST">
-          <input type="text" name="Nom-Prénom" placeholder="Nom - Prénom" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="tel" name="Téléphone" placeholder="Téléphone" required>
-          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-          <button type="submit">Envoyer</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="section avis-section">
-      <h2>Avis</h2>
-      <div class="avis-container">
-        <img src="chemin/vers/image-avis.jpg" alt="Avis Clients">
-        <form action="https://formspree.io/f/mjkwkwzj" method="POST" style="flex:1;">
-          <input type="text" name="Nom" placeholder="Votre nom" required>
-          <div class="star-rating">
-            <input type="radio" id="5-stars" name="Note" value="5" required><label for="5-stars">&#9733;</label>
-            <input type="radio" id="4-stars" name="Note" value="4"><label for="4-stars">&#9733;</label>
-            <input type="radio" id="3-stars" name="Note" value="3"><label for="3-stars">&#9733;</label>
-            <input type="radio" id="2-stars" name="Note" value="2"><label for="2-stars">&#9733;</label>
-            <input type="radio" id="1-star" name="Note" value="1"><label for="1-star">&#9733;</label>
-          </div>
-          <textarea name="Commentaire" rows="4" placeholder="Votre commentaire (facultatif)"></textarea>
-          <button type="submit">Laisser un avis</button>
-        </form>
-      </div>
-
-      <div class="average-rating">Note moyenne : 4.8/5 ⭐️</div>
-
-      <div class="owl-carousel owl-theme">
-        <div class="item">
-          <h4>Jean D.</h4>
-          <p>⭐️⭐️⭐️⭐️⭐️ Travail impeccable, très satisfait !</p>
+    <header class="header">
+        <div class="logo-container">
+            <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+            <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
         </div>
-        <div class="item">
-          <h4>Marie P.</h4>
-          <p>⭐️⭐️⭐️⭐️ Très bonne qualité, équipe professionnelle.</p>
-        </div>
-        <div class="item">
-          <h4>Luc B.</h4>
-          <p>⭐️⭐️⭐️⭐️⭐️ Résultat au-delà de mes attentes ! Merci.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="realisations.html">Réalisations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | <a href="mentions-legales.html" style="color: white;">Mentions légales</a> | <a href="politique-confidentialite.html" style="color: white;">Politique de confidentialité</a></p>
-  </footer>
+    <!-- Widgets flottants -->
+    <div class="floating-widgets">
+        <a href="https://wa.me/590690429400" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:goldsconstruction1991@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+590590570711"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fas fa-arrow-up"></i></a>
+    </div>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $(".owl-carousel").owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        autoplay:true,
-        autoplayTimeout:3000,
-        items:1
-      });
+    <main>
+        <section class="section contact-info">
+            <h2>Contactez-nous</h2>
+            <div class="contact-details">
+                <p><strong>Adresse :</strong> Immeuble Socogare, Rue Ferdinand Foreste, 97122 Baie-Mahault</p>
+                <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
+                <p><strong>Horaires :</strong> 7h - 14h du Lundi au Vendredi</p>
+                <p><strong>Facebook :</strong> <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">Gold S Construction et Rénovation</a></p>
+                <p><strong>Whatsapp :</strong> <a href="https://wa.me/590690429400" target="_blank">Gold S Construction et Rénovation</a></p>
+            </div>
 
-      // Scroll to top
-      document.querySelector('.fa-arrow-up').addEventListener('click', function(){
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      });
-    });
-  </script>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1cP4r-dhTtXytGdx2kbfQ9U4iB5c&ehbc=2E312F" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="section contact-form">
+            <h2>Formulaire de contact</h2>
+            <div class="form-container">
+                <form id="contact-form" action="https://formspree.io/f/mjkwkwzj" method="POST">
+                    <input type="text" name="nom" placeholder="Votre Nom" required>
+                    <input type="email" name="email" placeholder="Votre Email" required>
+                    <input type="tel" name="telephone" placeholder="Votre Téléphone" required>
+                    <textarea name="message" placeholder="Votre Message" required></textarea>
+                    <button type="submit">Envoyer</button>
+                    <div id="contact-message" class="form-message">Merci pour votre message !</div>
+                </form>
+                <div>
+                    <img src="image.jpg" alt="Image Contact" />
+                </div>
+            </div>
+        </section>
+
+        <section class="section avis-section">
+            <h2>Avis de nos clients</h2>
+            <div class="average-rating">Moyenne des évaluations : 4.5/5</div>
+
+            <div class="avis-container">
+                <div class="owl-carousel">
+                    <div class="item">
+                        <p>"Excellente prestation, très professionnel !"</p>
+                    </div>
+                    <div class="item">
+                        <p>"Travail soigné, équipe à l'écoute. Merci !" </p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="avis-form" action="https://script.google.com/macros/s/AKfycbz1I3c847FaZoQi25LjOAunKExhYtYXmdhTbzsRZAtDA16gR0wNPt1-kn9ipI9ot8RsAg/exec" method="POST">
+                <input type="text" name="nom_avis" placeholder="Votre Nom" required>
+                <textarea name="commentaire" placeholder="Votre Commentaire" required></textarea>
+
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">&#9733;</label>
+                </div>
+
+                <button type="submit">Envoyer votre avis</button>
+                <div id="avis-message" class="form-message">Merci pour votre avis !</div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION - Tous droits réservés</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                items: 1
+            });
+
+            window.addEventListener('load', function() {
+                document.getElementById('loader-wrapper').style.display = 'none';
+            });
+
+            // Formulaires confirmation
+            $('#contact-form').submit(function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: $form.attr('action'),
+                    method: 'POST',
+                    data: $form.serialize(),
+                    dataType: 'json',
+                    success: function() {
+                        $('#contact-message').fadeIn();
+                        $form.trigger('reset');
+                    }
+                });
+            });
+
+            $('#avis-form').submit(function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.ajax({
+                    url: $form.attr('action'),
+                    method: 'POST',
+                    data: $form.serialize(),
+                    success: function() {
+                        $('#avis-message').fadeIn();
+                        $form.trigger('reset');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
+
 </html>
