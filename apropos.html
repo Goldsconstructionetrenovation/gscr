@@ -84,12 +84,13 @@
       display: inline-block;
     }
 
-    section#content-block {
-      background-color: #f5f5f5;
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Section background color alternation */
+    #content-block:nth-child(odd) {
+      background-color: #f5f5f5; /* Gris clair */
+    }
+
+    #content-block:nth-child(even) {
+      background-color: #e0e0e0; /* Gris moyen */
     }
 
     h2 {
