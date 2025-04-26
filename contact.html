@@ -1,241 +1,285 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contactez GOLD S Construction et Rénovation pour vos projets en Guadeloupe.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION pour vos projets en Guadeloupe." />
+  <meta name="keywords" content="construction, rénovation, Guadeloupe, GOLD S Construction, bâtiment, service, rénovation maison, travaux public">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Contact - GOLD S CONSTRUCTION ET RENOVATION" />
+  <meta property="og:description" content="Professionnels en construction et rénovation en Guadeloupe." />
+  <meta property="og:image" content="image-preview.jpg" />
+  <meta property="og:url" content="https://www.goldsconstruction.com/contact" />
   <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <style>
-    /* Style général */
     body {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "Times New Roman", Georgia, serif;
       margin: 0;
       padding: 0;
+      background-color: #fff;
+      color: #000;
     }
-    .header, .footer {
-      background-color: #222;
-      color: white;
-      padding: 15px;
-      text-align: center;
+
+    .header {
+      background-color: #808080;
+      color: gold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      flex-wrap: wrap;
     }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .company-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: gold;
+    }
+
     .nav ul {
       list-style: none;
       padding: 0;
+      display: flex;
+      gap: 15px;
       margin: 0;
     }
-    .nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-    .nav ul li a {
-      color: gold;
+
+    .nav a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    main {
-      padding: 20px;
-    }
-    h2 {
-      color: #333;
+
+    .nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
     }
 
-    /* Widget flottants */
-    .floating-widget {
+    .nav a:focus {
+      outline: 2px solid gold;
+    }
+
+    .contact-links {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .contact-links a {
+      margin: 0 10px;
+      color: gold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contact-links a:hover {
+      color: #ffcc00;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #000;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+    }
+
+    main h2 {
+      margin-top: 30px;
+      color: #000;
+    }
+
+    main p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .footer {
+      background-color: #808080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1em;
+      }
+
+      .contact-links {
+        text-align: left;
+      }
+
+      .widget-container {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+
+    .contact-form {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .contact-form img {
+      width: 40%;
+    }
+
+    .contact-form form {
+      width: 55%;
+    }
+
+    .widget-container {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25D366; /* WhatsApp */
+      z-index: 999;
+    }
+
+    .widget-container a {
+      background-color: #808080;
       padding: 15px;
       border-radius: 50%;
-      color: white;
-      font-size: 24px;
-      text-align: center;
-      cursor: pointer;
-      display: none;
-    }
-    .floating-widget.email {
-      background-color: #d44638; /* Email */
-    }
-    .floating-widget.phone {
-      background-color: #2d87f0; /* Phone */
-    }
-    .floating-widget.fb {
-      background-color: #4267B2; /* Facebook */
-    }
-
-    .contact-info, .map-container {
-      margin-bottom: 20px;
-    }
-
-    /* Section de contact */
-    #contactez-nous {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-
-    /* Avis */
-    .avis-container .avis {
-      display: none;
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      text-align: center;
-      animation: fade 1s ease-in-out;
-    }
-
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Formulaire d'avis */
-    .formulaire-container {
-      display: flex;
-      flex-direction: column;
-    }
-    form input, form textarea, form select, form button {
       display: block;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      margin: 5px 0;
+      color: white;
+      text-align: center;
+      font-size: 20px;
     }
-    form button {
-      background-color: gold;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background-color: #e0c200;
-    }
-
   </style>
 </head>
+
 <body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Entête -->
-<header class="header">
-  <div class="logo-container">
-    <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
-    <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+  <div class="contact-links">
+    <a href="tel:+590590570711" title="Appeler">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.facebook.com/goldsconstruction" target="_blank" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
   </div>
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
 
-<!-- Main content -->
-<main>
-
-  <!-- Section Contactez-nous -->
-  <section id="contactez-nous">
-    <h2>Contactez-nous</h2>
-    <div class="contact-info">
-      <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
-      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
-      <p><strong>Horaires :</strong> Du lundi au vendredi, de 7h à 14h</p>
-      <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Envoyer un message</a></p>
-    </div>
-
-    <div class="map-container">
-      <iframe
-        src="https://maps.google.com/maps?q=Trimarg%20Guadeloupe&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        loading="lazy"></iframe>
-    </div>
-  </section>
-
-  <!-- Section Avis -->
-  <section class="laisser-avis-section">
-    <h2>Laisser un Avis</h2>
-    <div class="formulaire-container">
+  <main>
+    <h1>Contactez-nous</h1>
+    
+    <section class="contact-form">
+      <img src="form-image.jpg" alt="Image de contact">
       <form action="https://formspree.io/f/mjkwkwzj" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="telephone">Téléphone :</label>
-        <input type="tel" id="telephone" name="telephone" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message (facultative)" rows="5" facultative></textarea>
-
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <input type="tel" name="phone" placeholder="Votre téléphone">
+        <textarea name="message" placeholder="Votre message"></textarea>
         <button type="submit">Envoyer</button>
       </form>
-    </div>
-  </section>
+    </section>
 
-  <section class="avis-section">
-    <h2>Avis publiés</h2>
-    <div class="moyenne-avis">
-      <p><strong>Note moyenne :</strong> 4,5 / 5</p>
-    </div>
-    <div class="avis-container" id="avis-container">
-      <div class="avis">
-        <p>⭐⭐⭐⭐ - Michelle : Très bonne expérience, équipe professionnelle et réactive !</p>
-      </div>
-      <div class="avis">
-        <p>⭐⭐⭐⭐⭐ - Marc : GOLD S Construction a complètement rénové notre maison. Travail soigné, respect des délais, communication parfaite. Nous sommes ravis du résultat !</p>
-      </div>
-    </div>
-  </section>
+    <section id="google-map" style="width: 100%; height: 300px; margin-top: 40px;"></section>
 
-</main>
+    <h2>Laisser un avis</h2>
+    <form action="https://formspree.io/f/mjkwkwzj" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <textarea name="review" placeholder="Votre avis"></textarea>
+      <button type="submit">Laisser un avis</button>
+    </form>
 
-<!-- Pied de page -->
-<footer class="footer">
-  <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-    <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
-    <a href="politique-confidentialite.html" style="color: gold;">Politique de confidentialité</a>
-  </p>
-</footer>
+  </main>
 
-<!-- Widgets flottants -->
-<div class="floating-widget" id="whatsapp-widget">
-  <a href="https://wa.me/590690429400" target="_blank">📱</a>
-</div>
-<div class="floating-widget email" id="email-widget">
-  <a href="mailto:contact@goldsconstruction.com">📧</a>
-</div>
-<div class="floating-widget phone" id="phone-widget">
-  <a href="tel:+590590570711">📞</a>
-</div>
-<div class="floating-widget fb" id="fb-widget">
-  <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">🔵</a>
-</div>
+  <footer class="footer">
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | 
+      <a href="mentions-legales.html">Mentions légales</a> | 
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </p>
+  </footer>
 
-<script>
-// Affichage des widgets flottants
-const widgets = document.querySelectorAll('.floating-widget');
-window.addEventListener('scroll', () => {
-  widgets.forEach(widget => {
-    if (window.scrollY > 300) {
-      widget.style.display = 'block';
-    } else {
-      widget.style.display = 'none';
+  <div class="widget-container">
+    <a href="#top" title="Remonter">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    <a href="https://wa.me/590690429400" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="tel:+590590570711" title="Appeler">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="https://www.facebook.com/goldsconstruction" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      var trimarg = { lat: 16.0564, lng: -61.7101 }; // Coordinates of Trimarg, Guadeloupe
+      var map = new google.maps.Map(document.getElementById('google-map'), {
+        zoom: 12,
+        center: trimarg
+      });
+      var marker = new google.maps.Marker({
+        position: trimarg,
+        map: map
+      });
     }
-  });
-});
-</script>
-
+  </script>
 </body>
 </html>
