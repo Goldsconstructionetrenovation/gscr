@@ -69,7 +69,7 @@
     .nav a:focus {
       outline: 2px solid gold;
     }
- /* Widgets flottants */
+ /* Floating widgets with animation */
     .floating-widgets {
       position: fixed;
       bottom: 20px;
@@ -77,22 +77,27 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      z-index: 999;
+      z-index: 1000;
+      animation: fadeInRight 1s ease forwards;
+      opacity: 0;
     }
 
     .floating-widgets a {
-      background: gold;
-      color: white;
-      padding: 10px;
+      background-color: #808080;
+      color: gold;
+      padding: 12px;
       border-radius: 50%;
-      font-size: 18px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      text-align: center;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      transition: transform 0.3s, background-color 0.3s;
     }
 
     .floating-widgets a:hover {
-      transform: scale(1.2);
-      background: #ffcc00;
+      background-color: #ffcc00;
+      color: #000;
+      transform: scale(1.1);
     }
     /* Contact links */
     .contact-links {
