@@ -143,7 +143,7 @@
       }
     }
 
-    /* Footer */
+        /* Footer */
     .footer {
       background-color: #808080;
       color: white;
@@ -310,183 +310,172 @@
             border-radius: 10px;
             text-align: center;
             margin: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .form-container, .avis-container {
-                flex-direction: column;
-            }
-            .nav ul {
-                flex-direction: column;
-                gap: 10px;
-                margin-top: 1em;
-            }
-            .header, .footer {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer p {
-                font-size: 0.9em;
-            }
+        .owl-carousel .item img {
+            max-width: 100px;
+            border-radius: 50%;
         }
+
+        .avg-rating {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 
 <body>
 
     <!-- Loader -->
-    <div class="loader-wrapper" id="loader-wrapper">
+    <div class="loader-wrapper">
         <div class="loader"></div>
     </div>
 
     <header class="header">
-        <div class="logo-container">
-            <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
-            <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="apropos.html">À propos</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Widgets flottants -->
-    <div class="floating-widgets">
-        <a href="https://wa.me/590690429400" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:goldsconstruction1991@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+590590570711"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fas fa-arrow-up"></i></a>
+    <div class="section" id="contact">
+        <h2>Contactez-nous</h2>
+        <div class="contact-info">
+            <p>Adresse: Immeuble SOCOGARE, rue Ferdinand FORESTE 97122 BAIE-MAHAULT</p>
+            <p>Email: <a href="mailto:goldsconstruction1991@gmail.com">goldsconstruction1991@gmail.com</a></p>
+            <p>Téléphone: <a href="tel:+0590570711">0590570711</a></p>
+            <p><a href="https://wa.me/0590570711">Contactez-nous sur WhatsApp</a></p>
+            <p><a href="https://facebook.com/goldsconstruction1991">Facebook</a></p>
+        </div>
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15772.418680116084!2d-61.5330746!3d16.2764232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c3b426dcdcbb0f%3A0x29cfa45bde2f951d!2sTRIMARG%20Guadeloupe"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
 
-    <main>
-        <section class="section contact-info">
-            <h2>Contactez-nous</h2>
-            <div class="contact-details">
-                <p><strong>Adresse :</strong> Immeuble Socogare, Rue Ferdinand Foreste, 97122 Baie-Mahault</p>
-                <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
-                <p><strong>Horaires :</strong> 7h - 14h du Lundi au Vendredi</p>
-                <p><strong>Facebook :</strong> <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">Voir notre page</a></p>
-                <p><strong>Whatsapp :</strong> <a href="https://wa.me/590690429400" target="_blank">Discuter avec nous sur Whatsapp</a></p>
-            </div>
+    <div class="section" id="form">
+        <h2>Formulaire de contact</h2>
+        <div class="form-container">
+            <img src="photo.jpg" alt="Photo" />
+            <form action="https://formspree.io/f/mjkwkwzj" method="POST">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
 
-            <div class="map">
-                <iframe src="https://www.google.pl/maps/place/TRIMARG+Guadeloupe/@16.2418421,-61.5623829,991m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8c1345d52edc681d:0x43ec433b47dccd03!8m2!3d16.241837!4d-61.559808!16s%2Fg%2F11c13wz305?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" loading="lazy" allowfullscreen></iframe>
-            </div>
-        </section>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
 
-        <section class="section contact-form">
-            <h2>Formulaire de contact</h2>
-            <div class="form-container">
-                <form id="contact-form" action="https://formspree.io/f/mjkwkwzj" method="POST">
-                    <input type="text" name="nom" placeholder="Votre Nom" required>
-                    <input type="email" name="email" placeholder="Votre Email" required>
-                    <input type="tel" name="telephone" placeholder="Votre Téléphone" required>
-                    <textarea name="message" placeholder="Votre Message" required></textarea>
-                    <button type="submit">Envoyer</button>
-                    <div id="contact-message" class="form-message">Merci pour votre message !</div>
-                </form>
-                <div>
-                    <img src="image.jpg" alt="Image Contact" />
-                </div>
-            </div>
-        </section>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
 
-        <section class="section avis-section">
-            <h2>Avis de nos clients</h2>
-            <div class="average-rating">Moyenne des évaluations : 4.5/5</div>
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required>
 
-            <div class="avis-container">
-                <div class="owl-carousel">
-                    <div class="item">
-                        <p>"Excellente prestation, très professionnel !"</p>
-                    </div>
-                    <div class="item">
-                        <p>"Travail soigné, équipe à l'écoute. Merci !" </p>
-                    </div>
-                </div>
-            </div>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
-            <form id="avis-form" action="https://script.google.com/macros/s/AKfycbz1I3c847FaZoQi25LjOAunKExhYtYXmdhTbzsRZAtDA16gR0wNPt1-kn9ipI9ot8RsAg/exec" method="POST">
-                <input type="text" name="nom_avis" placeholder="Votre Nom" required>
-                <textarea name="commentaire" placeholder="Votre Commentaire" required></textarea>
+                <button type="submit">Envoyer</button>
 
-                <div class="star-rating">
-                    <input type="radio" id="star5" name="rating" value="5" required>
-                    <label for="star5">&#9733;</label>
-                    <input type="radio" id="star4" name="rating" value="4">
-                    <label for="star4">&#9733;</label>
-                    <input type="radio" id="star3" name="rating" value="3">
-                    <label for="star3">&#9733;</label>
-                    <input type="radio" id="star2" name="rating" value="2">
-                    <label for="star2">&#9733;</label>
-                    <input type="radio" id="star1" name="rating" value="1">
-                    <label for="star1">&#9733;</label>
-                </div>
-
-                <button type="submit">Envoyer votre avis</button>
-                <div id="avis-message" class="form-message">Merci pour votre avis !</div>
+                <div class="form-message">Merci pour votre message !</div>
             </form>
-        </section>
-    </main>
+        </div>
+    </div>
 
-      <footer class="footer">
+    <div class="section" id="avis">
+        <h2>Avis clients</h2>
+        <div class="avis-container">
+            <div class="avis-left">
+                <img src="avis-photo.jpg" alt="Avis" />
+                <div class="avg-rating">Moyenne des avis : 4,5/5</div>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <p>"Excellente expérience, très satisfait de la prestation."</p>
+                    </div>
+                    <div class="item">
+                        <p>"Travail de qualité, équipe très professionnelle."</p>
+                    </div>
+                    <div class="item">
+                        <p>"Service impeccable, je recommande vivement !"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avis-right">
+                <form action="https://script.google.com/macros/s/AKfycbz1I3c847FaZoQi25LjOAunKExhYtYXmdhTbzsRZAtDA16gR0wNPt1-kn9ipI9ot8RsAg/exec"
+                    method="POST">
+                    <label for="nom-avis">Nom :</label>
+                    <input type="text" id="nom-avis" name="nom" required>
+
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">&#9733;</label>
+                    </div>
+
+                    <label for="comment">Votre avis :</label>
+                    <textarea id="comment" name="comment" rows="4"></textarea>
+
+                    <button type="submit">Publier</button>
+                </form>
+                <div class="form-message">Merci pour votre avis !</div>
+            </div>
+        </div>
+    </div>
+    
+      <div class="floating-widgets">
+    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fas fa-arrow-up"></i></a>
+  </div>
+
+  <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
       <a href="mentions-legales.html">Mentions légales</a> |
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- OwlCarousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <script>
-        $(document).ready(function() {
-            $('.owl-carousel').owlCarousel({
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 1,
                 loop: true,
-                margin: 10,
-                nav: true,
-                items: 1
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
             });
 
-            window.addEventListener('load', function() {
-                document.getElementById('loader-wrapper').style.display = 'none';
-            });
-
-            // Formulaires confirmation
-            $('#contact-form').submit(function(e) {
+            // Message de confirmation après envoi du formulaire
+            $("form").submit(function (e) {
                 e.preventDefault();
-                var $form = $(this);
-                $.ajax({
-                    url: $form.attr('action'),
-                    method: 'POST',
-                    data: $form.serialize(),
-                    dataType: 'json',
-                    success: function() {
-                        $('#contact-message').fadeIn();
-                        $form.trigger('reset');
-                    }
-                });
-            });
-
-            $('#avis-form').submit(function(e) {
-                e.preventDefault();
-                var $form = $(this);
-                $.ajax({
-                    url: $form.attr('action'),
-                    method: 'POST',
-                    data: $form.serialize(),
-                    success: function() {
-                        $('#avis-message').fadeIn();
-                        $form.trigger('reset');
-                    }
-                });
+                $(this).find(".form-message").show();
             });
         });
     </script>
