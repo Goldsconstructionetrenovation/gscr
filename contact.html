@@ -5,72 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Contactez GOLD S CONSTRUCTION ET RENOVATION. Laissez votre avis, découvrez ceux des autres clients. Disponible en Guadeloupe." />
   <title>Contact & Avis - GOLD S CONSTRUCTION ET RENOVATION</title>
+
+  <!-- Font Awesome pour les icônes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <style>
     body {
-      font-family: "Times New Roman", serif;
+      font-family: "Times New Roman", Georgia, serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
       color: #000;
     }
-    .header, .footer {
+
+    /* Header */
+    .header {
       background-color: #808080;
-      color: white;
-      text-align: center;
+      color: gold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 1em;
+      flex-wrap: wrap;
     }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
     .company-name {
-      font-size: 1.8em;
+      font-size: 1.2em;
       font-weight: bold;
       color: gold;
     }
-    nav ul {
+
+    .nav ul {
       list-style: none;
-      display: flex;
-      justify-content: center;
       padding: 0;
-      margin: 10px 0 0;
-      gap: 20px;
+      display: flex;
+      gap: 15px;
+      margin: 0;
     }
-    nav a {
+
+    .nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
+
+    .nav a:hover {
+      text-decoration: underline;
       color: #ffcc00;
     }
+
+    .nav a:focus {
+      outline: 2px solid gold;
+    }
+
+    /* Contact links */
+    .contact-links {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .contact-links a {
+      margin: 0 10px;
+      color: gold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contact-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* Main content */
     .contact-page {
       max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
     }
+
     h2 {
       color: #222;
       border-left: 5px solid gold;
       padding-left: 15px;
       margin-top: 40px;
     }
+
     .info-block {
       background-color: #f4f4f4;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 15px;
       margin-top: 20px;
     }
+
     input, textarea, select {
       padding: 12px;
       border-radius: 5px;
       border: 1px solid #ccc;
       font-size: 16px;
-      font-family: "Times New Roman", serif;
     }
+
     button {
       padding: 12px;
       background-color: gold;
@@ -78,18 +127,43 @@
       font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
-      font-family: "Times New Roman", serif;
     }
+
+    button:hover {
+      background-color: #ffcc00;
+    }
+
     .avis-average {
       margin-top: 20px;
       font-size: 20px;
       font-weight: bold;
       color: #333;
     }
+
     .avis-list .avis-item {
       border-bottom: 1px solid #ccc;
       padding: 10px 0;
     }
+
+    /* Footer */
+    .footer {
+      background-color: #808080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #ffcc00;
+    }
+
+    /* Widget bar */
     .widget-bar {
       position: fixed;
       right: 10px;
@@ -99,6 +173,7 @@
       gap: 10px;
       z-index: 1000;
     }
+
     .widget-bar a {
       background-color: gold;
       color: #000;
@@ -108,18 +183,30 @@
       font-size: 18px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
+
     @media (max-width: 768px) {
-      nav ul {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
         flex-direction: column;
         gap: 10px;
+        margin-top: 1em;
       }
     }
   </style>
 </head>
+
 <body>
+  <!-- En-tête -->
   <header class="header">
-    <div class="company-name">GOLD S CONSTRUCTION ET RENOVATION</div>
-    <nav>
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
+    <nav class="nav">
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
@@ -130,10 +217,17 @@
     </nav>
   </header>
 
+  <div class="contact-links">
+    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <!-- Contenu principal -->
   <div class="contact-page">
     <h2>Contactez-nous</h2>
     <div class="info-block">
-      <p><strong>Adresse :</strong> 123 Rue du BTP, Pointe-à-Pitre, Guadeloupe</p>
+      <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE 97122 BAIE-MAHAULT</p>
       <p><strong>Téléphone :</strong> <a href="tel:+590590570711">05 90 57 07 11</a></p>
       <p><strong>Email :</strong> <a href="mailto:goldsconstruction1991@gmail.com">goldsconstruction1991@gmail.com</a></p>
     </div>
@@ -164,16 +258,22 @@
     <div class="avis-list" id="avis-list"></div>
   </div>
 
+  <!-- Pied de page -->
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION</p>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </p>
   </footer>
 
+  <!-- Widget WhatsApp / téléphone / email -->
   <div class="widget-bar">
     <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:+590590570711" title="Téléphone"><i class="fas fa-phone-alt"></i></a>
     <a href="mailto:goldsconstruction1991@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
   </div>
 
+  <!-- Script gestion des avis -->
   <script>
     const form = document.getElementById("avis-form");
     const avisList = document.getElementById("avis-list");
@@ -190,7 +290,7 @@
       .then(data => {
         alert("Merci pour votre avis !");
         form.reset();
-        loadAvis(); // recharger les avis
+        loadAvis();
       });
     });
 
