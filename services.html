@@ -215,9 +215,15 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('construction-neuve.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('construction-neuve2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('construction-neuve3.jpg');"></div>
+          <div class="swiper-slide">
+            <img src="construction-neuve.jpg" alt="Construction Neuve 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="construction-neuve2.jpg" alt="Construction Neuve 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="construction-neuve3.jpg" alt="Construction Neuve 3" />
+          </div>
         </div>
       </div>
     </section>
@@ -231,9 +237,15 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('renovation1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('renovation2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('renovation3.jpg');"></div>
+          <div class="swiper-slide">
+            <img src="renovation1.jpg" alt="Rénovation 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="renovation2.jpg" alt="Rénovation 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="renovation3.jpg" alt="Rénovation 3" />
+          </div>
         </div>
       </div>
     </section>
@@ -247,9 +259,15 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('amenagement-interieur1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('amenagement-interieur2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('amenagement-interieur3.jpg');"></div>
+          <div class="swiper-slide">
+            <img src="amenagement-interieur1.jpg" alt="Aménagement Intérieur 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="amenagement-interieur2.jpg" alt="Aménagement Intérieur 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="amenagement-interieur3.jpg" alt="Aménagement Intérieur 3" />
+          </div>
         </div>
       </div>
     </section>
@@ -263,9 +281,15 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('amenagement-exterieur1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('amenagement-exterieur2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('amenagement-exterieur3.jpg');"></div>
+          <div class="swiper-slide">
+            <img src="amenagement-exterieur1.jpg" alt="Aménagement Extérieur 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="amenagement-exterieur2.jpg" alt="Aménagement Extérieur 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="amenagement-exterieur3.jpg" alt="Aménagement Extérieur 3" />
+          </div>
         </div>
       </div>
     </section>
@@ -279,9 +303,15 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('travaux-sur-mesure1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('travaux-sur-mesure2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('travaux-sur-mesure3.jpg');"></div>
+          <div class="swiper-slide">
+            <img src="travaux-sur-mesure1.jpg" alt="Travaux Sur Mesure 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="travaux-sur-mesure2.jpg" alt="Travaux Sur Mesure 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="travaux-sur-mesure3.jpg" alt="Travaux Sur Mesure 3" />
+          </div>
         </div>
       </div>
     </section>
@@ -295,32 +325,36 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('vrd1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('vrd2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('vrd3.jpg');"></div>
+          <div class="swiper-slide">
+            <img src="vrd1.jpg" alt="Voirie et Réseaux Divers 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="vrd2.jpg" alt="Voirie et Réseaux Divers 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="vrd3.jpg" alt="Voirie et Réseaux Divers 3" />
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="politique-confidentialite.html">Politique de confidentialité</a>
-    </p>
+    <p>© 2025 GOLD S CONSTRUCTION ET RENOVATION. Tous droits réservés.</p>
+    <p><a href="contact.html">Contactez-nous</a></p>
   </footer>
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    var swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container', {
       loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      effect: 'fade',
     });
   </script>
 </body>
