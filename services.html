@@ -9,9 +9,6 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-  <!-- Swiper CSS for the photo slideshow -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
   <style>
     body {
       font-family: "Times New Roman", Georgia, serif;
@@ -103,15 +100,8 @@
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       display: flex;
+      flex-direction: column;
       gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .service img {
-      width: 300px;
-      max-width: 100%;
-      border-radius: 8px;
     }
 
     .service-content {
@@ -127,6 +117,20 @@
     .service p {
       font-size: 1.1em;
       color: #333;
+    }
+
+    /* Gallery (3 images côte à côte) */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: calc(33.333% - 10px);
+      border-radius: 8px;
+      object-fit: cover;
     }
 
     /* Footer */
@@ -147,18 +151,6 @@
       text-decoration: underline;
     }
 
-    /* Swiper Styles for the slideshow */
-    .swiper-container {
-      width: 100%;
-      height: 300px;
-    }
-
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-    }
-
     @media (max-width: 768px) {
       .header {
         flex-direction: column;
@@ -172,12 +164,11 @@
       }
 
       .service {
-        flex-direction: column;
         align-items: flex-start;
       }
 
-      .service img {
-        margin-bottom: 15px;
+      .gallery img {
+        width: 100%;
       }
     }
   </style>
@@ -203,28 +194,19 @@
   <main>
     <section class="intro">
       <h1>Nos Services de Construction et Rénovation en Guadeloupe - GOLD S CONSTRUCTION ET RENOVATION</h1>
-      <p>Chez <strong>GOLD S CONSTRUCTION ET RENOVATION</strong>, nous offrons une large gamme de services de construction, rénovation et aménagement pour réaliser vos projets de manière professionnelle et sur mesure. Nos experts sont à votre écoute pour concrétiser vos idées avec des matériaux de qualité et un accompagnement complet. Découvrez nos services ci-dessous.</p>
+      <p>Chez <strong>GOLD S CONSTRUCTION ET RENOVATION</strong>, nous offrons une large gamme de services de construction, rénovation et aménagement pour réaliser vos projets de manière professionnelle et sur mesure.</p>
     </section>
 
     <!-- Construction Neuve -->
     <section class="service">
       <div class="service-content">
         <h2>🔨 Construction Neuve de Maison et Bâtiments Professionnels</h2>
-        <p>Bâtissez votre futur avec GOLD S CONSTRUCTION ET RENOVATION ! Nous réalisons des constructions neuves de maisons individuelles, des bâtiments professionnels et des extensions sur mesure, en utilisant des matériaux de qualité. Notre équipe assure un suivi complet de votre projet, de la conception à la livraison, en garantissant des délais respectés et des finitions impeccables.</p>
+        <p>Bâtissez votre futur avec GOLD S CONSTRUCTION ET RENOVATION ! Nous réalisons des constructions neuves de maisons individuelles, des bâtiments professionnels et des extensions sur mesure.</p>
       </div>
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="Photo2.jpg" alt="Construction Neuve 1" />
-          </div>
-          <div class="swiper-slide">
-            <img src="immeuble.jpg" alt="Construction Neuve 2" />
-          </div>
-          <div class="swiper-slide">
-            <img src="construction-neuve3.jpg" alt="Construction Neuve 3" />
-          </div>
-        </div>
+      <div class="gallery">
+        <img src="Photo2.jpg" alt="Construction Neuve 1" />
+        <img src="immeuble.jpg" alt="Construction Neuve 2" />
+        <img src="construction-neuve3.jpg" alt="Construction Neuve 3" />
       </div>
     </section>
 
@@ -232,21 +214,12 @@
     <section class="service">
       <div class="service-content">
         <h2>🏚️ Rénovation Complète et Amélioration Énergétique</h2>
-        <p>Donnez une nouvelle vie à vos espaces avec notre service de rénovation intérieure et extérieure. Que ce soit pour une rénovation énergétique, une modernisation d’installations ou une rénovation complète de maison, nous adaptons nos solutions à vos besoins et à votre budget. Transformez votre habitat en un lieu plus moderne, fonctionnel et éco-responsable grâce à notre expertise.</p>
+        <p>Donnez une nouvelle vie à vos espaces avec notre service de rénovation intérieure et extérieure.</p>
       </div>
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="renovation.jpg" alt="Rénovation 1" />
-          </div>
-          <div class="swiper-slide">
-            <img src="renovation2.jpg" alt="Rénovation 2" />
-          </div>
-          <div class="swiper-slide">
-            <img src="renovation3.jpg" alt="Rénovation 3" />
-          </div>
-        </div>
+      <div class="gallery">
+        <img src="renovation.jpg" alt="Rénovation 1" />
+        <img src="renovation2.jpg" alt="Rénovation 2" />
+        <img src="renovation3.jpg" alt="Rénovation 3" />
       </div>
     </section>
 
@@ -254,21 +227,12 @@
     <section class="service">
       <div class="service-content">
         <h2>🚪 Aménagement Intérieur Sur Mesure</h2>
-        <p>Optimisez votre espace et le confort de votre intérieur avec notre service d’aménagement intérieur personnalisé. Nous proposons la création d’espaces sur mesure, la pose de cloisons, des revêtements de sol et de mur, ainsi que l'installation de menuiseries. Chaque projet est conçu pour répondre précisément à vos besoins et pour maximiser l'esthétique de vos espaces de vie.</p>
+        <p>Optimisez votre espace et le confort de votre intérieur avec notre service d’aménagement intérieur personnalisé.</p>
       </div>
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="cuisine3.jpg" alt="Aménagement Intérieur 1" />
-          </div>
-          <div class="swiper-slide">
-            <img src="amenagement-interieur2.jpg" alt="Aménagement Intérieur 2" />
-          </div>
-          <div class="swiper-slide">
-            <img src="amenagement-interieur3.jpg" alt="Aménagement Intérieur 3" />
-          </div>
-        </div>
+      <div class="gallery">
+        <img src="cuisine3.jpg" alt="Aménagement Intérieur 1" />
+        <img src="amenagement-interieur2.jpg" alt="Aménagement Intérieur 2" />
+        <img src="amenagement-interieur3.jpg" alt="Aménagement Intérieur 3" />
       </div>
     </section>
 
@@ -276,21 +240,12 @@
     <section class="service">
       <div class="service-content">
         <h2>🌴 Aménagement Extérieur : Terrasses, Piscines, Clôtures et Plus</h2>
-        <p>Transformez vos extérieurs en véritables espaces de détente et de vie grâce à notre expertise en aménagement extérieur. Nous concevons et réalisons des terrasses, des clôtures, des allées et même des piscines. Nous créons des espaces fonctionnels et agréables qui valorisent votre jardin tout en respectant vos envies et votre environnement.</p>
+        <p>Transformez vos extérieurs en véritables espaces de détente et de vie grâce à notre expertise en aménagement extérieur.</p>
       </div>
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="Photo3.jpg" alt="Aménagement Extérieur 1" />
-          </div>
-          <div class="swiper-slide">
-            <img src="amenagement-exterieur2.jpg" alt="Aménagement Extérieur 2" />
-          </div>
-          <div class="swiper-slide">
-            <img src="amenagement-exterieur3.jpg" alt="Aménagement Extérieur 3" />
-          </div>
-        </div>
+      <div class="gallery">
+        <img src="Photo3.jpg" alt="Aménagement Extérieur 1" />
+        <img src="amenagement-exterieur2.jpg" alt="Aménagement Extérieur 2" />
+        <img src="amenagement-exterieur3.jpg" alt="Aménagement Extérieur 3" />
       </div>
     </section>
 
@@ -298,21 +253,12 @@
     <section class="service">
       <div class="service-content">
         <h2>📐 Travaux de Construction et Rénovation Sur Mesure</h2>
-        <p>Vous avez un projet unique ? Nous vous proposons des travaux sur mesure qui répondent précisément à vos attentes. De la conception à la réalisation, nos solutions personnalisées sont adaptées à chaque besoin, pour un résultat clé en main, totalement en phase avec vos exigences.</p>
+        <p>Vous avez un projet unique ? Nous vous proposons des travaux sur mesure qui répondent précisément à vos attentes.</p>
       </div>
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="surmesure.jpg" alt="Travaux Sur Mesure 1" />
-          </div>
-          <div class="swiper-slide">
-            <img src="travaux-sur-mesure2.jpg" alt="Travaux Sur Mesure 2" />
-          </div>
-          <div class="swiper-slide">
-            <img src="travaux-sur-mesure3.jpg" alt="Travaux Sur Mesure 3" />
-          </div>
-        </div>
+      <div class="gallery">
+        <img src="surmesure.jpg" alt="Travaux Sur Mesure 1" />
+        <img src="travaux-sur-mesure2.jpg" alt="Travaux Sur Mesure 2" />
+        <img src="travaux-sur-mesure3.jpg" alt="Travaux Sur Mesure 3" />
       </div>
     </section>
 
@@ -320,45 +266,22 @@
     <section class="service">
       <div class="service-content">
         <h2>🚧 Voirie et Réseaux Divers (VRD)</h2>
-        <p>Nous prenons en charge tous vos travaux de voirie et réseaux divers (VRD). De l’assainissement au raccordement aux réseaux, en passant par les terrains et gestion des eaux pluviales, nous assurons des travaux de qualité pour préparer vos projets de construction ou de rénovation, en garantissant des infrastructures solides et durables.</p>
+        <p>Nous prenons en charge tous vos travaux de voirie et réseaux divers (VRD) : assainissement, raccordement, gestion des eaux pluviales.</p>
       </div>
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="vrd.jpg" alt="Voirie et Réseaux Divers 1" />
-          </div>
-          <div class="swiper-slide">
-            <img src="vrd2.jpg" alt="Voirie et Réseaux Divers 2" />
-          </div>
-          <div class="swiper-slide">
-            <img src="vrd3.jpg" alt="Voirie et Réseaux Divers 3" />
-          </div>
-        </div>
+      <div class="gallery">
+        <img src="vrd.jpg" alt="Voirie et Réseaux Divers 1" />
+        <img src="vrd2.jpg" alt="Voirie et Réseaux Divers 2" />
+        <img src="vrd3.jpg" alt="Voirie et Réseaux Divers 3" />
       </div>
     </section>
   </main>
 
-   <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-      <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
-      <a href="politique-confidentialite.html" style="color: gold;">Politique de confidentialité</a>
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
 </body>
 </html>
