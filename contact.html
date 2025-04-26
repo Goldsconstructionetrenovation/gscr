@@ -129,6 +129,74 @@
       text-decoration: underline;
     }
 
+    .contact-form {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      padding: 20px;
+      border: 1px solid gold;
+      margin-top: 40px;
+    }
+
+    .contact-form img {
+      width: 40%;
+    }
+
+    .contact-form form {
+      width: 55%;
+    }
+
+    .contact-info {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+
+    .contact-info div {
+      width: 30%;
+    }
+
+    .widget-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .widget-container a {
+      background-color: gold;
+      padding: 10px;
+      border-radius: 50%;
+      display: block;
+      margin: 5px 0;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .reviews-section {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid gold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .reviews-section .review-list {
+      width: 60%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 14px;
+    }
+
+    .reviews-section .review-form {
+      width: 35%;
+    }
+
     @media (max-width: 768px) {
       .header {
         flex-direction: column;
@@ -149,38 +217,10 @@
         bottom: 10px;
         right: 10px;
       }
-    }
 
-    .contact-form {
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    .contact-form img {
-      width: 40%;
-    }
-
-    .contact-form form {
-      width: 55%;
-    }
-
-    .widget-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-    }
-
-    .widget-container a {
-      background-color: #808080;
-      padding: 15px;
-      border-radius: 50%;
-      display: block;
-      margin: 5px 0;
-      color: white;
-      text-align: center;
-      font-size: 20px;
+      .contact-info {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -223,7 +263,7 @@
     <section class="contact-form">
       <img src="form-image.jpg" alt="Image de contact">
       <form action="https://formspree.io/f/mjkwkwzj" method="POST">
-        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="text" name="name" placeholder="Nom et prénom" required>
         <input type="email" name="email" placeholder="Votre email" required>
         <input type="tel" name="phone" placeholder="Votre téléphone">
         <textarea name="message" placeholder="Votre message"></textarea>
@@ -231,15 +271,47 @@
       </form>
     </section>
 
-    <section id="google-map" style="width: 100%; height: 300px; margin-top: 40px;"></section>
+    <div class="contact-info">
+      <div>
+        <h3>Adresse</h3>
+        <p>Trimarg, Guadeloupe</p>
+      </div>
+      <div>
+        <h3>Téléphone</h3>
+        <p><a href="tel:+590590570711">+590 590 570 711</a></p>
+      </div>
+      <div>
+        <h3>Heures</h3>
+        <p>Lundi - Vendredi: 8h - 17h</p>
+      </div>
+    </div>
+
+    <section id="google-map" style="width: 100%; height: 200px; margin-top: 40px;"></section>
 
     <h2>Laisser un avis</h2>
-    <form action="https://formspree.io/f/mjkwkwzj" method="POST">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <textarea name="review" placeholder="Votre avis"></textarea>
-      <button type="submit">Laisser un avis</button>
-    </form>
-
+    <div class="reviews-section">
+      <div class="review-list">
+        <h3>Avis des clients</h3>
+        <div>⭐⭐⭐⭐⭐ - Super service !</div>
+        <div>⭐⭐⭐⭐ - Très satisfait des travaux.</div>
+        <div>⭐⭐⭐⭐⭐ - Excellente équipe de rénovation.</div>
+      </div>
+      <div class="review-form">
+        <form action="https://formspree.io/f/mjkwkwzj" method="POST">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <div>
+            <label>Satisfaction</label>
+            <input type="radio" name="rating" value="1"> 1
+            <input type="radio" name="rating" value="2"> 2
+            <input type="radio" name="rating" value="3"> 3
+            <input type="radio" name="rating" value="4"> 4
+            <input type="radio" name="rating" value="5"> 5
+          </div>
+          <textarea name="review" placeholder="Votre avis"></textarea>
+          <button type="submit">Laisser un avis</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
