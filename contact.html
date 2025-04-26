@@ -48,7 +48,7 @@
       color: #ffcc00;
     }
 
-    /* Contact Section */
+    /* Contact Page */
     .contact-page {
       max-width: 1000px;
       margin: auto;
@@ -74,19 +74,34 @@
       margin: 5px 0;
     }
 
-    /* Form Styling */
-    form {
+    /* Contact Form Styling */
+    .form-container {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 20px;
       margin-top: 20px;
+    }
+
+    .form-left {
+      width: 48%;
       background-color: #f9f9f9;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    input, textarea, select {
+    .form-left img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .form-left form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-left input, .form-left textarea, .form-left select {
       padding: 12px;
       border-radius: 5px;
       border: 1px solid #ccc;
@@ -94,7 +109,7 @@
       font-family: "Times New Roman", serif;
     }
 
-    button {
+    .form-left button {
       padding: 12px;
       background-color: gold;
       border: none;
@@ -104,25 +119,65 @@
       font-family: "Times New Roman", serif;
     }
 
-    button:hover {
+    .form-left button:hover {
       background-color: #ffcc00;
     }
 
     /* Avis Section */
-    .avis-average {
+    .avis-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .avis-left {
+      width: 48%;
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .avis-left img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .avis-left form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .avis-left input, .avis-left select, .avis-left textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font-family: "Times New Roman", serif;
+    }
+
+    .avis-left button {
+      padding: 12px;
+      background-color: gold;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: "Times New Roman", serif;
+    }
+
+    .avis-left button:hover {
+      background-color: #ffcc00;
+    }
+
+    /* Avis List */
+    .avis-list {
       margin-top: 20px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       color: #333;
-    }
-
-    .avis-list .avis-item {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-
-    .avis-item strong {
-      color: gold;
     }
 
     /* Geo Map */
@@ -169,6 +224,10 @@
       .contact-page {
         padding: 20px;
       }
+
+      .form-container, .avis-section {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -190,46 +249,62 @@
 
   <!-- Contact Page Content -->
   <div class="contact-page">
-    <h2>Contactez-nous</h2>
-
-    <!-- Information Block -->
-    <div class="info-block">
-      <p><strong>Adresse :</strong> Socogare, 123 Rue du BTP, Pointe-à-Pitre, Guadeloupe</p>
-      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">05 90 57 07 11</a></p>
-      <p><strong>Email :</strong> <a href="mailto:goldsconstruction1991@gmail.com">goldsconstruction1991@gmail.com</a></p>
-      <p><strong>Horaires :</strong> Lundi à Vendredi de 7h à 14h</p>
-    </div>
+    <h2>Formulaire de Contact</h2>
 
     <!-- Contact Form -->
-    <form action="https://formspree.io/f/mayrqyjl" method="POST">
-      <input type="text" name="nom" placeholder="Votre nom" required />
-      <input type="email" name="email" placeholder="Votre email" required />
-      <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
+    <div class="form-container">
+      <div class="form-left">
+        <img src="image-gauche.jpg" alt="Image Contact" /> <!-- Image à gauche -->
+        <form action="https://formspree.io/f/mayrqyjl" method="POST">
+          <input type="text" name="nom" placeholder="Votre nom" required />
+          <input type="email" name="email" placeholder="Votre email" required />
+          <input type="tel" name="telephone" placeholder="Votre téléphone" required />
+          <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+
+      <!-- WhatsApp Widget -->
+      <div class="form-right">
+        <h3>Contactez-nous sur WhatsApp</h3>
+        <a href="https://wa.me/590690429400" target="_blank">
+          <button>Envoyer un message</button>
+        </a>
+      </div>
+    </div>
 
     <!-- Avis Section -->
-    <h2>Laissez un avis</h2>
-    <form id="avis-form">
-      <input type="text" name="nom" placeholder="Votre nom" required />
-      <select name="note" required>
-        <option value="">Choisissez une note</option>
-        <option value="5">★★★★★ (5) - Excellent</option>
-        <option value="4">★★★★☆ (4) - Très bien</option>
-        <option value="3">★★★☆☆ (3) - Bien</option>
-        <option value="2">★★☆☆☆ (2) - Passable</option>
-        <option value="1">★☆☆☆☆ (1) - Mauvais</option>
-      </select>
-      <textarea name="commentaire" placeholder="Votre commentaire (facultatif)" rows="4"></textarea>
-      <button type="submit">Envoyer l'avis</button>
-    </form>
+    <div class="avis-section">
+      <div class="avis-left">
+        <img src="image-droite.jpg" alt="Image Avis" /> <!-- Image à droite -->
+        <form id="avis-form">
+          <input type="text" name="nom" placeholder="Votre nom" required />
+          <select name="note" required>
+            <option value="">Choisissez une note</option>
+            <option value="5">★★★★★ (5) - Excellent</option>
+            <option value="4">★★★★☆ (4) - Très bien</option>
+            <option value="3">★★★☆☆ (3) - Bien</option>
+            <option value="2">★★☆☆☆ (2) - Passable</option>
+            <option value="1">★☆☆☆☆ (1) - Mauvais</option>
+          </select>
+          <textarea name="commentaire" placeholder="Votre commentaire (facultatif)" rows="4"></textarea>
+          <button type="submit">Envoyer l'avis</button>
+        </form>
+      </div>
 
-    <div class="avis-average" id="avis-moyenne">Moyenne : -</div>
+      <!-- Avis Moyenne -->
+      <div class="avis-right">
+        <h3>Évaluation moyenne des avis</h3>
+        <div id="moyenne-avis"></div>
+      </div>
+    </div>
+
+    <!-- Liste des avis -->
     <div class="avis-list" id="avis-list"></div>
 
     <!-- Google Maps -->
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed/v1/place?q=Socogare, Pointe-à-Pitre, Guadeloupe&key=YOUR_API_KEY" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps/embed/v1/place?q=Immeuble+SOCOGARE+Rue+Ferdinand+FORESTE+97122+BAIE-MAHAULT&key=YOUR_API_KEY" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -247,21 +322,21 @@
 
   <!-- Script for handling reviews -->
   <script>
-    const form = document.getElementById("avis-form");
+    const avisForm = document.getElementById("avis-form");
     const avisList = document.getElementById("avis-list");
-    const moyenneContainer = document.getElementById("avis-moyenne");
+    const moyenneContainer = document.getElementById("moyenne-avis");
 
-    form.addEventListener("submit", function (e) {
+    avisForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      const formData = new FormData(form);
-      fetch("https://script.google.com/macros/s/AKfycbyh-a0ZhizjFAbfptH391bia8_gy9bNkFtZkisdPENcX23Tk4EKpsHArVP9DmZCxM2ZsQ/exec", {
+      const formData = new FormData(avisForm);
+      fetch("https://script.google.com/macros/s/AKfycbwwNsruLa-aXZhejLiLDRBFY0o7y0fBPqG23xw3NyzEoK_yIT4nSm9fLGsfejWsPEJzaQ/exec", {
         method: "POST",
         body: formData
       })
       .then(res => res.json())
       .then(data => {
         alert("Merci pour votre avis !");
-        form.reset();
+        avisForm.reset();
         loadAvis(); // Recharger les avis
       });
     });
@@ -278,7 +353,7 @@
             avisList.innerHTML += `<div class="avis-item"><strong>${item.nom}</strong> - ${"★".repeat(item.note)}<br>${item.commentaire || ""}</div>`;
           });
           const moyenne = total / data.length;
-          moyenneContainer.textContent = `Moyenne : ${moyenne.toFixed(1)} / 5`;
+          moyenneContainer.textContent = `Évaluation moyenne : ${moyenne.toFixed(1)} / 5`;
         });
     }
 
