@@ -70,7 +70,7 @@
       outline: 2px solid gold;
     }
 
-    /* Floating widgets without opacity animation */
+    /* Floating widgets with animation */
     .floating-widgets {
       position: fixed;
       bottom: 20px;
@@ -79,6 +79,9 @@
       flex-direction: column;
       gap: 10px;
       z-index: 1000;
+      opacity: 0; /* Invisible par défaut */
+      transform: translateX(100px); /* Initialement décalé à droite */
+      animation: slideIn 1s forwards; /* Animation d'apparition */
     }
 
     .floating-widgets a {
@@ -97,6 +100,18 @@
       background-color: #ffcc00;
       color: #000;
       transform: scale(1.1);
+    }
+
+    /* Animation d'apparition des widgets */
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     /* Scroll to top button */
