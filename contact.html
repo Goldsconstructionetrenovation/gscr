@@ -52,50 +52,126 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Header et Footer */
-        .header, .footer {
-            background: #808080;
-            color: gold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1em;
-            text-align: center;
-        }
+        /* Header */
+    .header {
+      background-color: #808080;
+      color: gold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .logo {
-            height: 50px;
-        }
+    .logo {
+      height: 50px;
+    }
 
-        .company-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: gold;
-        }
+    .company-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: gold;
+    }
 
-        .nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            padding: 0;
-            margin: 0;
-        }
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+    }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .nav a:hover {
-            color: #ffcc00;
-        }
+    .nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+
+    .nav a:focus {
+      outline: 2px solid gold;
+    }
+        /* Floating widgets with animation */
+    .floating-widgets {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+      animation: fadeInRight 1s ease forwards;
+      opacity: 0;
+    }
+
+    .floating-widgets a {
+      background-color: #808080;
+      color: gold;
+      padding: 12px;
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .floating-widgets a:hover {
+      background-color: #ffcc00;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #808080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1em;
+      }
 
         /* Widgets flottants */
         .floating-widgets {
@@ -296,12 +372,12 @@
                 <p><strong>Adresse :</strong> Immeuble Socogare, Rue Ferdinand Foreste, 97122 Baie-Mahault</p>
                 <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
                 <p><strong>Horaires :</strong> 7h - 14h du Lundi au Vendredi</p>
-                <p><strong>Facebook :</strong> <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">Gold S Construction et Rénovation</a></p>
-                <p><strong>Whatsapp :</strong> <a href="https://wa.me/590690429400" target="_blank">Gold S Construction et Rénovation</a></p>
+                <p><strong>Facebook :</strong> <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">Voir notre page</a></p>
+                <p><strong>Whatsapp :</strong> <a href="https://wa.me/590690429400" target="_blank">Discuter avec nous sur Whatsapp</a></p>
             </div>
 
             <div class="map">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1cP4r-dhTtXytGdx2kbfQ9U4iB5c&ehbc=2E312F" loading="lazy" allowfullscreen></iframe>
+                <iframe src="https://www.google.pl/maps/place/TRIMARG+Guadeloupe/@16.2418421,-61.5623829,991m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8c1345d52edc681d:0x43ec433b47dccd03!8m2!3d16.241837!4d-61.559808!16s%2Fg%2F11c13wz305?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" loading="lazy" allowfullscreen></iframe>
             </div>
         </section>
 
