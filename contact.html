@@ -7,90 +7,82 @@
   <title>Contact - GOLD S CONSTRUCTION ET RENOVATION</title>
 
   <style>
-    /* Style intégré */
+    /* Style général */
     body {
       font-family: 'Times New Roman', Times, serif;
       margin: 0;
       padding: 0;
     }
-
     .header, .footer {
       background-color: #222;
       color: white;
       padding: 15px;
       text-align: center;
     }
-
     .nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
     .nav ul li {
       display: inline;
       margin: 0 15px;
     }
-
     .nav ul li a {
       color: gold;
       text-decoration: none;
       font-weight: bold;
     }
-
     main {
       padding: 20px;
     }
-
     h2 {
       color: #333;
     }
 
-    .formulaire-container, .laisser-avis-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 40px;
-      align-items: center;
-    }
-
-    .form-image, .avis-image {
-      flex: 1;
-    }
-
-    .formulaire, .laisser-avis {
-      flex: 1;
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    form input, form textarea, form select, form button {
-      display: block;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    form button {
-      background-color: gold;
-      border: none;
-      font-weight: bold;
+    /* Widget flottants */
+    .floating-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366; /* WhatsApp */
+      padding: 15px;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      text-align: center;
       cursor: pointer;
+      display: none;
+    }
+    .floating-widget.email {
+      background-color: #d44638; /* Email */
+    }
+    .floating-widget.phone {
+      background-color: #2d87f0; /* Phone */
+    }
+    .floating-widget.fb {
+      background-color: #4267B2; /* Facebook */
     }
 
-    form button:hover {
-      background-color: #e0c200;
-    }
-
-    .contact-info, .map-container, .moyenne-avis {
+    .contact-info, .map-container {
       margin-bottom: 20px;
     }
 
-    #avis-container .avis {
+    /* Section de contact */
+    #contactez-nous {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
+    /* Avis */
+    .avis-container .avis {
       display: none;
       background: #f9f9f9;
       padding: 15px;
@@ -105,29 +97,32 @@
       to { opacity: 1; }
     }
 
-    /* Flèche retour haut */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: gold;
-      color: white;
+    /* Formulaire d'avis */
+    .formulaire-container {
+      display: flex;
+      flex-direction: column;
+    }
+    form input, form textarea, form select, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
       padding: 10px;
-      border-radius: 50%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: gold;
+      border: none;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 20px;
-      display: none;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .formulaire-container, .laisser-avis-container {
-        flex-direction: column;
-      }
+    form button:hover {
+      background-color: #e0c200;
     }
+
   </style>
 </head>
-
 <body>
 
 <!-- Entête -->
@@ -147,17 +142,30 @@
   </nav>
 </header>
 
+<!-- Main content -->
 <main>
 
-<!-- Section Formulaire de contact -->
-<section class="formulaire-section">
-  <div class="formulaire-container">
-    <div class="form-image">
-      <img src="contact-image.jpg" alt="Contactez-nous" style="width:100%;">
+  <!-- Section Contactez-nous -->
+  <section id="contactez-nous">
+    <h2>Contactez-nous</h2>
+    <div class="contact-info">
+      <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
+      <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
+      <p><strong>Horaires :</strong> Du lundi au vendredi, de 7h à 14h</p>
+      <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Envoyer un message</a></p>
     </div>
 
-    <div class="formulaire">
-      <h2>Formulaire de Contact</h2>
+    <div class="map-container">
+      <iframe
+        src="https://maps.google.com/maps?q=Trimarg%20Guadeloupe&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Section Avis -->
+  <section class="laisser-avis-section">
+    <h2>Laisser un Avis</h2>
+    <div class="formulaire-container">
       <form action="https://formspree.io/f/mjkwkwzj" method="POST">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>
@@ -169,80 +177,27 @@
         <input type="tel" id="telephone" name="telephone" required>
 
         <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <textarea id="message" name="message (facultative)" rows="5" facultative></textarea>
 
         <button type="submit">Envoyer</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Section Contactez-nous -->
-<section id="contactez-nous">
-  <h2>Contactez-nous</h2>
-  <div class="contact-info">
-    <p><strong>Adresse :</strong> Immeuble SOCOGARE, rue Ferdinand FORESTE, 97122 BAIE-MAHAULT</p>
-    <p><strong>Téléphone :</strong> <a href="tel:+590590570711">0590 57 07 11</a></p>
-    <p><strong>Horaires :</strong> Du lundi au vendredi, de 7h à 14h</p>
-    <p><strong>WhatsApp :</strong> <a href="https://wa.me/590690429400" target="_blank">Envoyer un message</a></p>
-  </div>
-
-  <div class="map-container">
-    <iframe
-      src="https://maps.google.com/maps?q=Immeuble%20SOCOGARE,%20rue%20Ferdinand%20FORESTE,%2097122%20BAIE-MAHAULT&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-<!-- Section Laisser un avis -->
-<section class="laisser-avis-section">
-  <div class="laisser-avis-container">
-    <div class="laisser-avis">
-      <h2>Laisser un Avis</h2>
-      <form id="avis-form">
-        <label for="nom-avis">Nom :</label>
-        <input type="text" id="nom-avis" name="nom-avis" required>
-
-        <label for="note">Note :</label>
-        <select id="note" name="note" required>
-          <option value="">Choisissez une note</option>
-          <option value="5">5 - Excellent</option>
-          <option value="4">4 - Très bien</option>
-          <option value="3">3 - Bien</option>
-          <option value="2">2 - Passable</option>
-          <option value="1">1 - Mauvais</option>
-        </select>
-
-        <label for="commentaire">Commentaire :</label>
-        <textarea id="commentaire" name="commentaire" rows="4" required></textarea>
-
-        <button type="submit">Envoyer l'avis</button>
-      </form>
+  <section class="avis-section">
+    <h2>Avis publiés</h2>
+    <div class="moyenne-avis">
+      <p><strong>Note moyenne :</strong> 4,5 / 5</p>
     </div>
-
-    <div class="avis-image">
-      <img src="avis-image.jpg" alt="Avis Client" style="width:100%;">
+    <div class="avis-container" id="avis-container">
+      <div class="avis">
+        <p>⭐⭐⭐⭐ - Michelle : Très bonne expérience, équipe professionnelle et réactive !</p>
+      </div>
+      <div class="avis">
+        <p>⭐⭐⭐⭐⭐ - Marc : GOLD S Construction a complètement rénové notre maison. Travail soigné, respect des délais, communication parfaite. Nous sommes ravis du résultat !</p>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- Section Avis publiés -->
-<section class="avis-section">
-  <h2>Avis publiés</h2>
-  <div class="moyenne-avis">
-    <p><strong>Note moyenne :</strong> 4,5 / 5</p>
-  </div>
-
-  <div class="avis-container" id="avis-container">
-    <div class="avis">
-      <p>⭐⭐⭐⭐ - Michelle : Très bonne expérience, équipe professionnelle et réactive !</p>
-    </div>
-    <div class="avis">
-      <p>⭐⭐⭐⭐⭐ - Marc : GOLD S Construction a complètement rénové notre maison. Travail soigné, respect des délais, communication parfaite. Nous sommes ravis du résultat !</p>
-    </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
@@ -254,37 +209,31 @@
   </p>
 </footer>
 
-<!-- Flèche retour haut -->
-<div class="back-to-top">↑</div>
+<!-- Widgets flottants -->
+<div class="floating-widget" id="whatsapp-widget">
+  <a href="https://wa.me/590690429400" target="_blank">📱</a>
+</div>
+<div class="floating-widget email" id="email-widget">
+  <a href="mailto:contact@goldsconstruction.com">📧</a>
+</div>
+<div class="floating-widget phone" id="phone-widget">
+  <a href="tel:+590590570711">📞</a>
+</div>
+<div class="floating-widget fb" id="fb-widget">
+  <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank">🔵</a>
+</div>
 
-<!-- Script pour défiler les avis -->
 <script>
-const avisElements = document.querySelectorAll('#avis-container .avis');
-let index = 0;
-
-function afficherAvis() {
-  avisElements.forEach((avis, i) => {
-    avis.style.display = i === index ? 'block' : 'none';
-  });
-  index = (index + 1) % avisElements.length;
-}
-
-setInterval(afficherAvis, 5000);
-afficherAvis();
-
-// Flèche retour haut
-const backToTopButton = document.querySelector('.back-to-top');
-
+// Affichage des widgets flottants
+const widgets = document.querySelectorAll('.floating-widget');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopButton.style.display = 'block';
-  } else {
-    backToTopButton.style.display = 'none';
-  }
-});
-
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  widgets.forEach(widget => {
+    if (window.scrollY > 300) {
+      widget.style.display = 'block';
+    } else {
+      widget.style.display = 'none';
+    }
+  });
 });
 </script>
 
