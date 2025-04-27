@@ -212,7 +212,7 @@
 
   <div class="map">
     <a href="https://goo.gl/maps/3ft1qxMjc1h6wXsJ6" target="_blank">
-      <img src="miniature-map.jpg" alt="Carte - Nous trouver" loading="lazy">
+      <img src="miniature.jpg" alt="Carte - Nous trouver" loading="lazy">
     </a>
   </div>
 </section>
@@ -246,7 +246,7 @@
   <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
   <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="#"><i class="fas fa-arrow-up"></i></a>
+  <a href="#top"><i class="fas fa-arrow-up"></i></a>
 </div>
 
 <!-- Footer -->
@@ -270,12 +270,17 @@
       autoplayHoverPause: true
     });
 
-    $("form").submit(function(e){
-      e.preventDefault();
-      $(this).find(".form-message").fadeIn();
-      setTimeout(() => location.reload(), 3000); // rechargement après 3 sec
+    
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true
     });
   });
+
 </script>
 
 </body>
