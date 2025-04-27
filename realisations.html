@@ -6,176 +6,179 @@
   <meta name="description" content="Découvrez les réalisations de GOLD S CONSTRUCTION ET RENOVATION en Guadeloupe : chantiers de construction, rénovation et aménagement.">
   <title>Réalisations - GOLD S CONSTRUCTION ET RENOVATION</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #333;
-    }
+  <!-- Lien vers Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    /* Header */
-.header {
-  background-color: #808080; /* Fond gris */
-  color: gold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  flex-wrap: wrap;
-}
+ <style>
+  body {
+    font-family: "Times New Roman", serif; /* Police Times New Roman */
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+  }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  /* Header */
+  .header {
+    background-color: #808080; /* Fond gris */
+    color: gold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    flex-wrap: wrap;
+  }
 
-.logo {
-  height: 50px;
-}
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-.company-name {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: gold;
-}
+  .logo {
+    height: 50px;
+  }
 
-.nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 15px;
-  margin: 0;
-}
+  .company-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: gold;
+  }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+  .nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+  }
 
-.nav a:hover {
-  text-decoration: underline;
-  color: #ffcc00;
-}
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-.nav a:focus {
-  outline: 2px solid gold;
-}
-/* Floating Widgets */
-.floating-widgets {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
+  .nav a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+  }
 
-.floating-widgets a {
-  background: #808080;
-  color: gold;
-  padding: 12px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 22px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s, background-color 0.3s;
-}
+  .nav a:focus {
+    outline: 2px solid gold;
+  }
 
-.floating-widgets a:hover {
-  background-color: #ffcc00;
-  color: #000;
-  transform: scale(1.1);
-}
+  /* Floating Widgets */
+  .floating-widgets {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
 
+  .floating-widgets a {
+    background: #808080;
+    color: gold;
+    padding: 12px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, background-color 0.3s;
+  }
 
-    .realisations {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+  .floating-widgets a:hover {
+    background-color: #ffcc00;
+    color: #000;
+    transform: scale(1.1);
+  }
 
-    .intro {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+  .realisations {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
 
-    .intro h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
+  .intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-    .intro p {
-      font-size: 1.2em;
-    }
+  .intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
 
-    .galerie {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: space-around;
-    }
+  .intro p {
+    font-size: 1.2em;
+  }
 
+  .galerie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+  }
+
+  .projet {
+    width: 30%;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .projet img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .projet h3 {
+    font-size: 1.5em;
+    margin: 15px;
+  }
+
+  .projet p {
+    font-size: 1em;
+    margin: 0 15px 15px;
+    color: #666;
+  }
+
+  .projet:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Footer */
+  .footer {
+    background-color: #808080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
     .projet {
-      width: 30%;
-      background-color: #f4f4f4;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+      width: 48%;
     }
+  }
 
-    .projet img {
+  @media (max-width: 480px) {
+    .projet {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
     }
+  }
+</style>
 
-    .projet h3 {
-      font-size: 1.5em;
-      margin: 15px;
-    }
-
-    .projet p {
-      font-size: 1em;
-      margin: 0 15px 15px;
-      color: #666;
-    }
-
-    .projet:hover {
-      transform: translateY(-10px);
-    }
-
-   /* Footer */
-.footer {
-  background-color: #808080;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-
-    @media (max-width: 768px) {
-      .projet {
-        width: 48%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .projet {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
-<header class="header">
+  <header class="header">
     <div class="logo-container">
       <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
       <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
@@ -189,8 +192,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-</header>
-
+  </header>
 
   <main class="realisations">
     <section class="intro">
@@ -216,26 +218,23 @@
         <h3>Aménagement extérieur à Le Gosier</h3>
         <p>Création d’une terrasse en bois exotique et pose de clôtures modernes pour une villa en bord de mer.</p>
       </article>
-      <!-- Tu peux dupliquer ces blocs pour ajouter d'autres projets -->
     </section>
-    
   </main>
+
   <div class="floating-widgets">
-  <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
-  <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
-  <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="#top"><i class="fas fa-arrow-up"></i></a>
-</div>
+    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#top"><i class="fas fa-arrow-up"></i></a>
+  </div>
 
-
-<footer class="footer">
-  <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-    <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
-    <a href="politique-confidentialite.html" style="color: gold;">Politique de confidentialité</a>
-  </p>
-</footer>
-
+  <footer class="footer">
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
+      <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
+      <a href="politique-confidentialite.html" style="color: gold;">Politique de confidentialité</a>
+    </p>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
