@@ -6,10 +6,11 @@
   <meta name="description" content="Votre projet, notre savoir-faire, GOLD S CONSTRUCTION ET RENOVATION. Contactez-nous pour un devis gratuit." />
   <title>GOLD S CONSTRUCTION ET RENOVATION - Accueil</title>
 
-  <!-- Font Awesome pour les icônes -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <style>
+    /* Global Styles */
     body {
       font-family: "Times New Roman", Georgia, serif;
       margin: 0;
@@ -19,6 +20,12 @@
       line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
     .header {
       background-color: #808080;
       color: gold;
@@ -26,8 +33,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 1em;
-      flex-wrap: wrap;
       position: relative;
+      flex-wrap: wrap;
     }
 
     .logo-container {
@@ -41,108 +48,44 @@
     }
 
     .company-name {
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-weight: bold;
       color: gold;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      position: absolute;
-      top: 1.2em;
-      right: 1.5em;
-      z-index: 1001;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    /* Animation bars when active */
-    .menu-toggle.active div:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .menu-toggle.active div:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.active div:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .nav {
       display: flex;
       align-items: center;
-      transition: max-height 0.5s ease, opacity 0.5s ease;
     }
 
     .nav ul {
       list-style: none;
-      padding: 0;
       display: flex;
       gap: 15px;
       margin: 0;
+      padding: 0;
     }
 
     .nav a {
       color: white;
-      text-decoration: none;
       font-weight: bold;
-      opacity: 1;
-      transition: opacity 0.5s ease;
+      transition: color 0.3s;
     }
 
     .nav a:hover {
-      text-decoration: underline;
       color: #ffcc00;
+      text-decoration: underline;
     }
 
-    .nav a:focus {
-      outline: 2px solid gold;
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      .nav {
-        overflow: hidden;
-        flex-direction: column;
-        width: 100%;
-        background-color: #808080;
-        max-height: 0;
-        opacity: 0;
-      }
-
-      .nav.open {
-        max-height: 500px; /* Large pour couvrir plusieurs liens */
-        opacity: 1;
-      }
-
-      .nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        margin: 1em 0;
-      }
-
-      .nav a {
-        opacity: 0;
-      }
-
-      .nav.open a {
-        opacity: 1;
-      }
-    }
-
-    /* Hero section */
+    /* Hero Section */
     .hero {
       position: relative;
       height: 500px;
@@ -154,11 +97,19 @@
       width: 100%;
     }
 
+    .hero-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
     .hero-slider img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
       position: absolute;
       opacity: 0;
       transition: opacity 1s ease-in-out;
@@ -171,11 +122,12 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
       padding: 30px;
       border-radius: 10px;
       color: white;
       max-width: 80%;
+      margin: auto;
     }
 
     .cta-button {
@@ -183,20 +135,50 @@
       padding: 10px 20px;
       background-color: gold;
       color: black;
-      text-decoration: none;
       font-weight: bold;
       margin-top: 20px;
       border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
     .cta-button:hover {
       background-color: #ffcc00;
     }
 
-    /* Floating Widgets */
+    /* Presentation Modern Card */
+    .presentation {
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 40px;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .card h2 {
+      color: #000;
+      margin-bottom: 20px;
+      border-bottom: 3px solid gold;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    /* Floating widgets */
     .floating-widgets {
       position: fixed;
-      bottom: 100px;
+      bottom: 20px;
       right: 20px;
       display: flex;
       flex-direction: column;
@@ -210,7 +192,6 @@
       padding: 12px;
       border-radius: 50%;
       text-align: center;
-      text-decoration: none;
       font-size: 22px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s, background-color 0.3s;
@@ -218,27 +199,34 @@
 
     .floating-widgets a:hover {
       background-color: #ffcc00;
-      color: #000;
+      color: black;
       transform: scale(1.1);
     }
 
-    /* Scroll To Top */
+    /* Scroll to Top */
     .scroll-to-top {
       display: none;
       position: fixed;
-      bottom: 20px;
+      bottom: 80px;
       right: 20px;
       background-color: #808080;
       color: gold;
       padding: 12px;
       border-radius: 50%;
       font-size: 22px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
       cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s;
     }
 
     .scroll-to-top.show {
       display: flex;
+    }
+
+    .scroll-to-top:hover {
+      background-color: #ffcc00;
+      color: black;
+      transform: scale(1.1);
     }
 
     /* Footer */
@@ -247,7 +235,32 @@
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: gold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #808080;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+      }
+
+      .nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -259,15 +272,11 @@
       <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
       <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
     </div>
-
     <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
+      <i class="fas fa-bars"></i>
     </div>
-
-    <nav class="nav" id="nav">
-      <ul>
+    <nav class="nav">
+      <ul id="nav-list">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="services.html">Services</a></li>
@@ -285,52 +294,64 @@
     <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
   </div>
 
-  <!-- Hero section -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-slider">
-      <img src="slide4.jpg" alt="Construction et rénovation en Guadeloupe" class="active" />
+      <img src="slide4.jpg" alt="Slide 1" class="active" loading="lazy" />
+      <!-- Tu peux rajouter d'autres images ici -->
     </div>
     <div class="hero-content">
       <h1>Votre projet, notre savoir-faire</h1>
-      <p>Votre partenaire en Guadeloupe pour des projets de construction et de rénovation réalisés avec précision et excellence.</p>
+      <p>Votre partenaire en Guadeloupe pour vos projets de construction et de rénovation.</p>
       <a href="contact.html" class="cta-button">Demandez un devis gratuit</a>
     </div>
   </section>
 
-  <!-- Scroll to top -->
-  <div class="scroll-to-top" id="scrollToTopBtn">
+  <!-- Qui sommes-nous -->
+  <main class="presentation">
+    <div class="card">
+      <h2>Qui sommes-nous ?</h2>
+      <p>
+        GOLD S CONSTRUCTION ET RENOVATION accompagne ses clients en Guadeloupe dans leurs projets de construction, de rénovation et d’aménagement. 
+        Notre équipe met un point d’honneur à offrir des prestations de qualité, une communication claire et un suivi attentif, 
+        pour garantir la satisfaction totale de nos clients.
+      </p>
+    </div>
+  </main>
+
+  <!-- Scroll to Top -->
+  <div class="scroll-to-top" id="scrollToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
-      <a href="mentions-legales.html" style="color: gold;">Mentions légales</a> |
-      <a href="politique-confidentialite.html" style="color: gold;">Politique de confidentialité</a>
+    <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION | 
+      <a href="mentions-legales.html">Mentions légales</a> | 
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
 
   <script>
     // Slider
     const slides = document.querySelectorAll('.hero-slider img');
-    let index = 0;
+    let currentIndex = 0;
     setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
     }, 4000);
 
-    // Menu Toggle
+    // Menu mobile
     const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
+    const navList = document.getElementById('nav-list');
 
     menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      menuToggle.classList.toggle('active');
+      navList.classList.toggle('show');
     });
 
-    // Scroll to Top
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    // Scroll to top
+    const scrollToTopBtn = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         scrollToTopBtn.classList.add('show');
@@ -339,8 +360,7 @@
       }
     });
 
-    scrollToTopBtn.addEventListener('click', function (e) {
-      e.preventDefault();
+    scrollToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
