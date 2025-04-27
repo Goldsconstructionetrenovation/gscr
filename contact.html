@@ -155,6 +155,42 @@
       margin-top: 40px;
     }
 
+  /* Cadres pour chaque section */
+  section.section {
+    background: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Card pour chaque avis */
+  .owl-carousel .item {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  /* Nom et note sous l'avis */
+  .avis-info {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  /* Étoiles fixes pour afficher la note des avis */
+  .avis-etoiles {
+    color: gold;
+    margin-bottom: 5px;
+  }
+
+
     /* Avis */
     .owl-carousel {
       margin-top: 20px;
@@ -235,8 +271,7 @@
 <section class="section" id="form">
   <h2>Formulaire de contact</h2>
   <form action="https://formspree.io/f/mjkwkwzj" method="POST">
-    <input type="text" name="nom" placeholder="Votre nom" required>
-    <input type="text" name="prenom" placeholder="Votre prénom" required>
+    <input type="text" name="nom" placeholder="Votre nom/prénom" required>
     <input type="email" name="email" placeholder="Votre email" required>
     <input type="tel" name="telephone" placeholder="Votre téléphone" required>
     <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
@@ -250,39 +285,60 @@
   <div class="avg-rating">Moyenne des avis : 4,5/5</div>
 
   <div class="owl-carousel owl-theme">
-    <div class="item"><p>"Excellente expérience, très satisfait de la prestation."</p></div>
-    <div class="item"><p>"Travail de qualité, équipe très professionnelle."</p></div>
-    <div class="item"><p>"Service impeccable, je recommande vivement !"</p></div>
-  </div> 
-  <div class="avis-form" style="margin-top: 40px;">
-  <h3 style="text-align: center;">Laissez votre avis</h3>
-
-  <form action="https://formspree.io/f/mjkwkwzj" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-    <form id="avis-form" action="https://formspree.io/f/mjkwkwzj" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-
-    <!-- Système d'étoiles -->
-    <div class="star-rating" style="font-size: 30px; text-align: center; margin-bottom: 10px;">
-      <span class="star" data-value="1">&#9734;</span>
-      <span class="star" data-value="2">&#9734;</span>
-      <span class="star" data-value="3">&#9734;</span>
-      <span class="star" data-value="4">&#9734;</span>
-      <span class="star" data-value="5">&#9734;</span>
+    <div class="item">
+      <p>"Excellente expérience, très satisfait de la prestation."</p>
+      <div class="avis-etoiles">
+        ★★★★★
+      </div>
+      <div class="avis-info">
+        - Jean D.
+      </div>
     </div>
+    <div class="item">
+      <p>"Travail de qualité, équipe très professionnelle."</p>
+      <div class="avis-etoiles">
+        ★★★★☆
+      </div>
+      <div class="avis-info">
+        - Marie C.
+      </div>
+    </div>
+    <div class="item">
+      <p>"Service impeccable, je recommande vivement !"</p>
+      <div class="avis-etoiles">
+        ★★★★★
+      </div>
+      <div class="avis-info">
+        - Thierry M.
+      </div>
+    </div>
+  </div> 
 
-    <!-- Compteur Note dynamique -->
-    <div id="note-display" style="text-align: center; font-size: 18px; color: #555;">Note : 0/5</div>
+  <div class="avis-form" style="margin-top: 40px;">
+    <h3 style="text-align: center;">Laissez votre avis</h3>
 
-    <!-- Champ caché pour envoyer la note -->
-    <input type="hidden" name="note" id="note" required>
+    <form id="avis-form" action="https://formspree.io/f/mjkwkwzj" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+      <div class="star-rating" style="font-size: 30px; text-align: center; margin-bottom: 10px;">
+        <span class="star" data-value="1">&#9734;</span>
+        <span class="star" data-value="2">&#9734;</span>
+        <span class="star" data-value="3">&#9734;</span>
+        <span class="star" data-value="4">&#9734;</span>
+        <span class="star" data-value="5">&#9734;</span>
+      </div>
 
-    <input type="text" name="nom" placeholder="Votre nom" required>
-    <textarea name="avis" placeholder="Votre commentaire (facultatif)" rows="4"></textarea>
-    <button type="submit">Envoyer l'avis</button>
-    <div class="form-message">Merci pour votre avis !</div>
-  </form>
-</div>
-    
+      <div id="note-display" style="text-align: center; font-size: 18px; color: #555;">Note : 0/5</div>
+
+      <input type="hidden" name="note" id="note" required>
+
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <textarea name="avis" placeholder="Votre commentaire (facultatif)" rows="4"></textarea>
+      <button type="submit">Envoyer l'avis</button>
+      <div class="form-message">Merci pour votre avis !</div>
+    </form>
+  </div>
+
 </section>
+
 
 <div class="floating-widgets">
   <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
@@ -304,61 +360,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-  $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: true
-    });
-  });
-
-</script>
-  <script>
-  $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: true
-    });
-
-    const stars = document.querySelectorAll('.star');
-    const noteInput = document.getElementById('note');
-    const noteDisplay = document.getElementById('note-display');
-
-    let selectedRating = 0;
-
-    stars.forEach(star => {
-      star.addEventListener('mouseover', function() {
-        const hoverValue = this.getAttribute('data-value');
-        highlightStars(hoverValue);
-      });
-
-      star.addEventListener('mouseout', function() {
-        highlightStars(selectedRating);
-      });
-
-      star.addEventListener('click', function() {
-        selectedRating = this.getAttribute('data-value');
-        noteInput.value = selectedRating;
-        noteDisplay.textContent = "Note : " + selectedRating + "/5";
-        highlightStars(selectedRating);
-      });
-    });
-
-    function highlightStars(rating) {
-      stars.forEach(star => {
-        if (star.getAttribute('data-value') <= rating) {
-          star.classList.add('selected');
-        } else {
-          star.classList.remove('selected');
-        }
-      });
-      <script>
-  $(document).ready(function(){
+  $(document).ready(function() {
     $(".owl-carousel").owlCarousel({
       items: 1,
       loop: true,
@@ -403,9 +405,8 @@
       });
     }
 
-    // Gestion de l'envoi du formulaire
     form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Empêche l'envoi normal
+      event.preventDefault();
       const formData = new FormData(form);
 
       fetch(form.action, {
@@ -420,8 +421,11 @@
           selectedRating = 0;
           highlightStars(0);
           noteDisplay.textContent = "Note : 0/5";
-          formMessage.style.display = "block"; // Affiche le message
+          formMessage.style.display = "block";
           formMessage.textContent = "Merci pour votre avis !";
+          setTimeout(() => {
+            formMessage.style.display = "none";
+          }, 5000);
         } else {
           alert('Une erreur est survenue. Veuillez réessayer.');
         }
@@ -429,10 +433,6 @@
         alert('Erreur réseau : ' + error.message);
       });
     });
-  });
-</script>
-
-    }
   });
 </script>
 
