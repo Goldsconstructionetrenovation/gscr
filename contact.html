@@ -18,49 +18,54 @@
       color: #000;
     }
 
-    .header, .footer {
-      background-color: #808080;
-      color: white;
-      padding: 1em;
-      text-align: center;
-    }
-
-    .header .company-name, .footer a {
+    /* Header */
+    .header {
+      background-color: #808080; /* Fond gris */
       color: gold;
-      font-weight: bold;
-      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      flex-wrap: wrap;
     }
 
-    .header nav ul {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .company-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: gold;
+    }
+
+    .nav ul {
       list-style: none;
       padding: 0;
-      margin: 1em 0 0 0;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      gap: 15px;
+      margin: 0;
     }
 
-    .header nav a {
+    .nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .header nav a:hover {
+    .nav a:hover {
+      text-decoration: underline;
       color: #ffcc00;
     }
 
-    .section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    h2 {
-      text-align: center;
-      border-bottom: 2px solid gold;
-      display: inline-block;
-      margin-bottom: 30px;
+    .nav a:focus {
+      outline: 2px solid gold;
     }
 
     .contact-info, .contact-form, .avis-section {
@@ -172,17 +177,20 @@
 <body>
 
 <header class="header">
-  <div class="company-name">GOLD S CONSTRUCTION ET RENOVATION</div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="realisations.html">Réalisations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
+      <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <section class="section" id="contact">
   <h2>Contactez-nous</h2>
