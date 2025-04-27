@@ -258,7 +258,8 @@
   <h3 style="text-align: center;">Laissez votre avis</h3>
 
   <form action="https://formspree.io/f/mjkwkwzj" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-    
+    <form id="avis-form" action="https://formspree.io/f/mjkwkwzj" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+
     <!-- Système d'étoiles -->
     <div class="star-rating" style="font-size: 30px; text-align: center; margin-bottom: 10px;">
       <span class="star" data-value="1">&#9734;</span>
@@ -365,6 +366,81 @@
           star.classList.remove('selected');
         }
       });
+      <script>
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true
+    });
+
+    const stars = document.querySelectorAll('.star');
+    const noteInput = document.getElementById('note');
+    const noteDisplay = document.getElementById('note-display');
+    const form = document.getElementById('avis-form');
+    const formMessage = form.querySelector('.form-message');
+
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('mouseover', function() {
+        const hoverValue = this.getAttribute('data-value');
+        highlightStars(hoverValue);
+      });
+
+      star.addEventListener('mouseout', function() {
+        highlightStars(selectedRating);
+      });
+
+      star.addEventListener('click', function() {
+        selectedRating = this.getAttribute('data-value');
+        noteInput.value = selectedRating;
+        noteDisplay.textContent = "Note : " + selectedRating + "/5";
+        highlightStars(selectedRating);
+      });
+    });
+
+    function highlightStars(rating) {
+      stars.forEach(star => {
+        if (star.getAttribute('data-value') <= rating) {
+          star.classList.add('selected');
+        } else {
+          star.classList.remove('selected');
+        }
+      });
+    }
+
+    // Gestion de l'envoi du formulaire
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche l'envoi normal
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          selectedRating = 0;
+          highlightStars(0);
+          noteDisplay.textContent = "Note : 0/5";
+          formMessage.style.display = "block"; // Affiche le message
+          formMessage.textContent = "Merci pour votre avis !";
+        } else {
+          alert('Une erreur est survenue. Veuillez réessayer.');
+        }
+      }).catch(error => {
+        alert('Erreur réseau : ' + error.message);
+      });
+    });
+  });
+</script>
+
     }
   });
 </script>
