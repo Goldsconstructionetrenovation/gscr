@@ -67,7 +67,69 @@
   .nav a:focus {
     outline: 2px solid gold;
   }
+/* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
 
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: gold;
+    }
+
+    /* Main */
+    main {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #000;
+      border-bottom: 3px solid gold;
+      display: inline-block;
+    }
+
+    /* Section background color alternation with borders and shadows */
+    #content-block:nth-child(odd) {
+      background-color: #f5f5f5;
+      border: 2px solid #808080;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    #content-block:nth-child(even) {
+      background-color: #e0e0e0;
+      border: 2px solid #808080;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    p, ul {
+      text-align: justify;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .faq h3 {
+      margin-top: 20px;
+      font-weight: bold;
+    }
   /* Floating Widgets */
   .floating-widgets {
     position: fixed;
@@ -182,6 +244,9 @@
     <div class="logo-container">
       <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
       <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
+    </div>
+      <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
     </div>
     <nav class="nav">
       <ul>
