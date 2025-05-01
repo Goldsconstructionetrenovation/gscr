@@ -196,6 +196,31 @@
       .gallery img {
         width: 100%;
       }
+      .menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #808080;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+
+  .nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
     }
   </style>
 
@@ -232,8 +257,11 @@
       <img src="Logo.png" alt="Logo GOLD S Construction et Rénovation" class="logo" />
       <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
     </div>
+    <div class="menu-toggle" id="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
     <nav class="nav">
-      <ul>
+  <ul id="nav-list">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="services.html">Services</a></li>
@@ -334,6 +362,14 @@
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navList = document.getElementById('nav-list');
+
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
 
