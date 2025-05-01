@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <style>
+    /* ... (tout le CSS inchangé, conservé comme dans ta version) ... */
     body {
       font-family: "Times New Roman", Georgia, serif;
       margin: 0;
@@ -19,7 +20,6 @@
       line-height: 1.6;
     }
 
-    /* Header */
     .header {
       background-color: #808080;
       color: gold;
@@ -69,7 +69,6 @@
       outline: 2px solid gold;
     }
 
-    /* Menu Hamburger */
     .menu-toggle {
       display: none;
       font-size: 28px;
@@ -79,7 +78,7 @@
 
     @media (max-width: 768px) {
       .nav ul {
-        display: none; /* Cache le menu par défaut */
+        display: none;
         flex-direction: column;
         background-color: #808080;
         width: 100%;
@@ -90,15 +89,14 @@
       }
 
       .nav ul.show {
-        display: flex; /* Affiche le menu lorsqu'il a la classe 'show' */
+        display: flex;
       }
 
       .menu-toggle {
-        display: block; /* Affiche le bouton hamburger */
+        display: block;
       }
     }
 
-    /* Main */
     main {
       padding: 40px 20px;
       max-width: 1200px;
@@ -121,7 +119,6 @@
       font-size: 1.2em;
     }
 
-    /* Services */
     .service {
       background-color: #f4f4f4;
       padding: 20px;
@@ -154,7 +151,6 @@
       color: #333;
     }
 
-    /* Gallery */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -168,7 +164,6 @@
       object-fit: cover;
     }
 
-    /* Floating Contact Button */
     .floating-button {
       position: fixed;
       bottom: 20px;
@@ -191,10 +186,9 @@
       background-color: #ffcc00;
     }
 
-    /* Flèche de Remontée */
     .back-to-top {
       position: fixed;
-      bottom: 20px;
+      bottom: 80px;
       right: 20px;
       background-color: gold;
       color: black;
@@ -202,7 +196,7 @@
       border-radius: 50%;
       font-size: 24px;
       cursor: pointer;
-      display: none; /* Cacher par défaut */
+      display: none;
       z-index: 999;
     }
 
@@ -210,7 +204,6 @@
       background-color: #ffcc00;
     }
 
-    /* Footer */
     .footer {
       background-color: #808080;
       color: white;
@@ -229,53 +222,13 @@
     }
   </style>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NTMZ1NJWPE"></script>
   <script>
-    // Apparition des services au scroll
-    document.addEventListener("DOMContentLoaded", function () {
-      const services = document.querySelectorAll(".service");
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, {
-        threshold: 0.2
-      });
-
-      services.forEach(service => {
-        observer.observe(service);
-      });
-
-      // Apparition du bouton flottant après quelques secondes
-      setTimeout(() => {
-        document.querySelector('.floating-button').style.display = 'flex';
-      }, 4000);
-
-      // Affichage/masquage de la flèche de remontée lors du défilement
-      const backToTopButton = document.querySelector('.back-to-top');
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-          backToTopButton.style.display = 'flex';
-        } else {
-          backToTopButton.style.display = 'none';
-        }
-      });
-
-      // Fonction pour revenir en haut
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    // Menu hamburger - affichage/masquage du menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const navList = document.getElementById('nav-list');
-
-    menuToggle.addEventListener('click', () => {
-      navList.classList.toggle('show');
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NTMZ1NJWPE');
   </script>
 </head>
 
@@ -297,16 +250,8 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTMZ1NJWPE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NTMZ1NJWPE');
   </header>
-  
+
   <main>
     <section class="intro">
       <h1>Nos Services de Construction et Rénovation en Guadeloupe - GOLD S CONSTRUCTION ET RENOVATION</h1>
@@ -387,16 +332,15 @@
     </section>
   </main>
 
- <div class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </div>
-
-  <div class="floating-button">
-    <a href="contact.html">
+ <a href="contact.html" class="floating-button">
       <i class="fas fa-envelope"></i> Contactez-nous
     </a>
-  </div>
-  </div>
+
+    <!-- Flèche retour haut -->
+    <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </main>
 
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
@@ -404,6 +348,46 @@
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
+
+  <!-- Script JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const services = document.querySelectorAll(".service");
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      services.forEach(service => observer.observe(service));
+
+      setTimeout(() => {
+        document.querySelector('.floating-button').style.display = 'flex';
+      }, 4000);
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          backToTopButton.style.display = 'flex';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      });
+
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navList = document.getElementById('nav-list');
+
+      menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('show');
+      });
+    });
+  </script>
 </body>
 </html>
-
