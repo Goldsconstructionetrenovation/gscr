@@ -300,13 +300,44 @@
   </header>
 
   <!-- Floating Widgets -->
-  <div class="floating-widgets">
-    <a href="tel:+590590570711" title="Appeler"><i class="fas fa-phone-alt"></i></a>
-    <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail"><i class="fas fa-envelope"></i></a>
-    <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" id="scrollToTopButton" title="Remonter"><i class="fas fa-arrow-up"></i></a>
-  </div>
+<div class="floating-widgets">
+  <a href="tel:+590590570711" title="Appeler" id="phone-icon"><i class="fas fa-phone-alt"></i></a>
+  <a href="mailto:goldsconstruction1991@gmail.com" title="Envoyer un mail" id="email-icon"><i class="fas fa-envelope"></i></a>
+  <a href="https://wa.me/590690429400" target="_blank" title="WhatsApp" id="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/goldsconstructionetrenovation/" target="_blank" title="Facebook" id="facebook-icon"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" id="scrollToTopButton" title="Remonter"><i class="fas fa-arrow-up"></i></a>
+</div>
+
+<script>
+  // Événements pour les widgets flottants
+  document.getElementById("phone-icon").addEventListener("click", function() {
+    gtag('event', 'click_tel', {
+      'event_category': 'contact',
+      'event_label': 'Téléphone'
+    });
+  });
+
+  document.getElementById("email-icon").addEventListener("click", function() {
+    gtag('event', 'click_email', {
+      'event_category': 'contact',
+      'event_label': 'Email'
+    });
+  });
+
+  document.getElementById("whatsapp-icon").addEventListener("click", function() {
+    gtag('event', 'click_whatsapp', {
+      'event_category': 'contact',
+      'event_label': 'WhatsApp'
+    });
+  });
+
+  document.getElementById("facebook-icon").addEventListener("click", function() {
+    gtag('event', 'click_facebook', {
+      'event_category': 'contact',
+      'event_label': 'Facebook'
+    });
+  });
+</script>
 
   <!-- Hero Section -->
   <section class="hero">
