@@ -378,6 +378,34 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+<script>
+  // Fonction générique pour envoyer un événement GA4
+  function trackClick(eventName, linkType) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, {
+        'event_category': 'Contact',
+        'event_label': linkType
+      });
+    }
+  }
+
+  // Sélecteurs pour chaque lien
+  document.querySelector('a[href^="tel:"]').addEventListener('click', () => {
+    trackClick('click_tel', 'Téléphone');
+  });
+
+  document.querySelector('a[href^="mailto:"]').addEventListener('click', () => {
+    trackClick('click_email', 'Email');
+  });
+
+  document.querySelector('a[href*="wa.me"]').addEventListener('click', () => {
+    trackClick('click_whatsapp', 'WhatsApp');
+  });
+
+  document.querySelector('a[href*="facebook.com"]').addEventListener('click', () => {
+    trackClick('click_facebook', 'Facebook');
+  });
+</script>
 
 </body>
 </html>
