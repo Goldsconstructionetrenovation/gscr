@@ -69,6 +69,35 @@
       outline: 2px solid gold;
     }
 
+    /* Menu Hamburger */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav ul {
+        display: none; /* Cache le menu par défaut */
+        flex-direction: column;
+        background-color: #808080;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      .nav ul.show {
+        display: flex; /* Affiche le menu lorsqu'il a la classe 'show' */
+      }
+
+      .menu-toggle {
+        display: block; /* Affiche le bouton hamburger */
+      }
+    }
+
     /* Main */
     main {
       padding: 40px 20px;
@@ -162,6 +191,25 @@
       background-color: #ffcc00;
     }
 
+    /* Flèche de Remontée */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: gold;
+      color: black;
+      padding: 15px 20px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: none; /* Cacher par défaut */
+      z-index: 999;
+    }
+
+    .back-to-top:hover {
+      background-color: #ffcc00;
+    }
+
     /* Footer */
     .footer {
       background-color: #808080;
@@ -179,102 +227,6 @@
     .footer a:hover {
       text-decoration: underline;
     }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 1em;
-      }
-
-      .gallery img {
-        width: 100%;
-      }
-      .menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .nav ul {
-    .menu-toggle {
-  display: none;  /* Masque complètement le menu hamburger */
-}
-    flex-direction: column;
-    background-color: #808080;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-  }
-
-  .nav ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-   /* Cacher l'icône des trois barres en mode bureau et tablette */
-      .menu-toggle {
-        display: none;
-      }
-    }
-      /* Menu Hamburger */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .nav ul {
-    display: none; /* Cache le menu par défaut */
-    flex-direction: column;
-    background-color: #808080;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-  }
-
-  .nav ul.show {
-    display: flex; /* Affiche le menu quand il a la classe 'show' */
-  }
-
-  .menu-toggle {
-    display: block; /* Affiche le bouton hamburger */
-  }
-  .back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: gold;
-  color: black;
-  padding: 15px 20px;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  display: none; /* Cache la flèche par défaut */
-  z-index: 999;
-}
-
-.back-to-top:hover {
-  background-color: #ffcc00;
-}
-
-}
-
-
   </style>
 
   <script>
@@ -300,11 +252,30 @@
       setTimeout(() => {
         document.querySelector('.floating-button').style.display = 'flex';
       }, 4000);
-    });
+
+      // Affichage/masquage de la flèche de remontée lors du défilement
+      const backToTopButton = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          backToTopButton.style.display = 'flex';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      });
+
       // Fonction pour revenir en haut
       backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    });
+
+    // Menu hamburger - affichage/masquage du menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
   </script>
 </head>
 
@@ -315,10 +286,10 @@
       <span class="company-name">GOLD S CONSTRUCTION ET RENOVATION</span>
     </div>
     <div class="menu-toggle" id="menu-toggle">
-  <i class="fas fa-bars"></i>
-</div>
+      <i class="fas fa-bars"></i>
+    </div>
     <nav class="nav">
-  <ul id="nav-list">
+      <ul id="nav-list">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="services.html">Services</a></li>
@@ -326,17 +297,8 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTMZ1NJWPE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NTMZ1NJWPE');
-</script>
   </header>
-
+  
   <main>
     <section class="intro">
       <h1>Nos Services de Construction et Rénovation en Guadeloupe - GOLD S CONSTRUCTION ET RENOVATION</h1>
@@ -417,16 +379,15 @@
     </section>
   </main>
 
-  <!-- Flèche de Remontée -->
-  <div class="back-to-top">
+ <div class="back-to-top">
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <!-- Séparation du bouton "Contactez-nous" -->
   <div class="floating-button">
     <a href="contact.html">
       <i class="fas fa-envelope"></i> Contactez-nous
     </a>
+  </div>
   </div>
 
   <footer class="footer">
@@ -435,67 +396,6 @@
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </p>
   </footer>
-  <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navList = document.getElementById('nav-list');
-
-  menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('show');
-  });
-</script>
-  <script>
-  // Fonction générique pour envoyer un événement GA4
-  function trackClick(eventName, linkType) {
-    if (typeof gtag === 'function') {
-      gtag('event', eventName, {
-        'event_category': 'Contact',
-        'event_label': linkType
-      });
-    }
-  }
-
-  // Sélecteurs pour chaque lien
-  document.querySelector('a[href^="tel:"]').addEventListener('click', () => {
-    trackClick('click_tel', 'Téléphone');
-  });
-
-  document.querySelector('a[href^="mailto:"]').addEventListener('click', () => {
-    trackClick('click_email', 'Email');
-  });
-
-  document.querySelector('a[href*="wa.me"]').addEventListener('click', () => {
-    trackClick('click_whatsapp', 'WhatsApp');
-  });
-
-  document.querySelector('a[href*="facebook.com"]').addEventListener('click', () => {
-    trackClick('click_facebook', 'Facebook');
-  });
-    const menuToggle = document.getElementById('menu-toggle');
-const navList = document.getElementById('nav-list');
-
-menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('show');  // Ajoute ou enlève la classe 'show' pour afficher/masquer le menu
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopButton = document.querySelector('.back-to-top');
-
-  // Afficher ou cacher la flèche en fonction du défilement
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 300) {
-      backToTopButton.style.display = 'flex';  // Affiche la flèche si l'utilisateur a défilé de 300px
-    } else {
-      backToTopButton.style.display = 'none';  // Cache la flèche si l'utilisateur est en haut de la page
-    }
-  });
-
-  // Fonction pour revenir en haut de la page au clic
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-</script>
-
 </body>
 </html>
 
