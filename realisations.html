@@ -67,19 +67,19 @@
   .nav a:focus {
     outline: 2px solid gold;
   }
-/* Hamburger button */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
+   
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: gold;
-    }
+.menu-toggle i {
+  font-size: 28px;
+  color: white;
+}
+
 
     /* Main */
     main {
@@ -230,6 +230,12 @@
       width: 48%;
     }
   }
+   @media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
 
   @media (max-width: 480px) {
     .projet {
