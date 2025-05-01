@@ -223,7 +223,12 @@
   .menu-toggle {
     display: block;
   }
+   /* Cacher l'icône des trois barres en mode bureau et tablette */
+      .menu-toggle {
+        display: none;
+      }
     }
+
   </style>
 
   <script>
@@ -250,6 +255,10 @@
         document.querySelector('.floating-button').style.display = 'flex';
       }, 4000);
     });
+      // Fonction pour revenir en haut
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
   </script>
 </head>
 
@@ -362,11 +371,17 @@
     </section>
   </main>
 
-  <!-- Floating Contact Button -->
-  <a href="contact.html" class="floating-button">
-    <i class="fas fa-envelope"></i> Contactez-nous !
+  <!-- Flèche de Remontée -->
+  <div class="back-to-top">
     <i class="fas fa-arrow-up"></i>
-  </a>
+  </div>
+
+  <!-- Séparation du bouton "Contactez-nous" -->
+  <div class="floating-button">
+    <a href="contact.html">
+      <i class="fas fa-envelope"></i> Contactez-nous
+    </a>
+  </div>
 
   <footer class="footer">
     <p>&copy; 2025 GOLD S CONSTRUCTION ET RENOVATION |
