@@ -228,6 +228,52 @@
         display: none;
       }
     }
+      /* Menu Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    display: none; /* Cache le menu par défaut */
+    flex-direction: column;
+    background-color: #808080;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav ul.show {
+    display: flex; /* Affiche le menu quand il a la classe 'show' */
+  }
+
+  .menu-toggle {
+    display: block; /* Affiche le bouton hamburger */
+  }
+  .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: gold;
+  color: black;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Cache la flèche par défaut */
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: #ffcc00;
+}
+
+}
+
 
   </style>
 
@@ -424,6 +470,30 @@
   document.querySelector('a[href*="facebook.com"]').addEventListener('click', () => {
     trackClick('click_facebook', 'Facebook');
   });
+    const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('show');  // Ajoute ou enlève la classe 'show' pour afficher/masquer le menu
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.querySelector('.back-to-top');
+
+  // Afficher ou cacher la flèche en fonction du défilement
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = 'flex';  // Affiche la flèche si l'utilisateur a défilé de 300px
+    } else {
+      backToTopButton.style.display = 'none';  // Cache la flèche si l'utilisateur est en haut de la page
+    }
+  });
+
+  // Fonction pour revenir en haut de la page au clic
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
 </script>
 
 </body>
