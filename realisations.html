@@ -266,6 +266,80 @@
   .menu-toggle {
     display: block;
   }
+  /* ===== PROJET PREMIUM ===== */
+
+.projet-premium {
+  width: 100%;
+  background: #111;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid gold;
+}
+
+.projet-premium img {
+  width: 100%;
+  display: block;
+}
+
+.contenu-premium {
+  padding: 25px;
+}
+
+.projet-premium h3 {
+  color: gold;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.projet-premium p {
+  color: #ddd;
+  line-height: 1.7;
+}
+
+.badge-premium {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: gold;
+  color: black;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  z-index: 10;
+  font-size: 0.9em;
+}
+
+.premium-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.premium-grid div {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,215,0,0.3);
+}
+
+.premium-description {
+  border-left: 4px solid gold;
+  padding-left: 15px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .premium-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projet-premium h3 {
+    font-size: 1.5em;
+  }
+}
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -406,26 +480,32 @@
         <p>Notre équipe a su redonner vie à cet espace en optimisant à la fois son apparence et sa fonctionnalité.</p>
       </article>
 
-      <img src="villa-guadeloupe.jpg" alt="Projet villas de luxe en Guadeloupe - Avant Après">
-  
-  <h3>Domaine de l’Anse – Résidence haut de gamme en Guadeloupe</h3>
+      <article class="projet projet-premium">
+  <div class="badge-premium">PROJET PREMIUM</div>
 
-  <p><strong>🌿 Avant :</strong> Terrain naturel préservé avec vue mer panoramique au cœur d’un environnement tropical exceptionnel.</p>
+  <img src="villa-guadeloupe.jpg" alt="Projet villas de luxe en Guadeloupe - Avant Après">
 
-  <p><strong>🏗️ Projet :</strong> Aménagement d’une résidence composée de 6 villas contemporaines avec piscines privatives, espaces paysagés et prestations premium.</p>
+  <div class="contenu-premium">
+    <h3>Domaine de l’Anse – Résidence haut de gamme en Guadeloupe</h3>
 
-  <p><strong>🏡 Après :</strong> Un domaine résidentiel élégant et harmonieux offrant confort, intimité et vue imprenable sur la mer des Caraïbes.</p>
+    <p>
+      Projet de résidence de prestige composé de 6 villas contemporaines
+      avec piscines privatives et vue mer panoramique.
+    </p>
 
-  <p><strong>✅ Prestations :</strong></p>
-  <ul>
-    <li>6 Villas T3/T4</li>
-    <li>6 Piscines privées</li>
-    <li>12 500 m² de terrain paysagé</li>
-    <li>Vue mer panoramique</li>
-    <li>Prestations haut de gamme</li>
-  </ul>
+    <div class="premium-grid">
+      <div>🏡 6 Villas T3/T4</div>
+      <div>🏊 6 Piscines privées</div>
+      <div>🌴 12 500 m² paysagés</div>
+      <div>🌊 Vue mer panoramique</div>
+    </div>
 
-  <p><strong>📍 Localisation :</strong> Guadeloupe</p>
+    <p class="premium-description">
+      Implanté dans un environnement tropical exceptionnel, ce projet
+      illustre notre vision d’un habitat moderne, élégant et parfaitement
+      intégré à la nature guadeloupéenne.
+    </p>
+  </div>
 </article>
     
     </section>
